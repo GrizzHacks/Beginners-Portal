@@ -17,3 +17,4 @@ Resources - To be expanded upon:
   - https://automatetheboringstuff.com/
   - https://github.com/TreeHacks
   - CodeWars/HackerRank
+  - https://hack.mlh.io/learn/
