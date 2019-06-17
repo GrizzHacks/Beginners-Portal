@@ -10,6 +10,8 @@ Potential Ideas - To be expanded upon:
   
   - Website. Front-end design tutorial, introduce Django/React
   
+  - Raspberry PI's and Arduino tutorials
+  
 Resources - To be expanded upon:
   - http://inventwithpython.com/blog/2012/02/20/i-need-practice-programming-49-ideas-for-game-clones-to-code/
   - https://automatetheboringstuff.com/
