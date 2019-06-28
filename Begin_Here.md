@@ -1,7 +1,7 @@
 <h1>New Programmers should start with the following steps:</h1>
  
 1) Make sure you have a text/source-code editor installed. Examples are Atom, Visual Studio Code, Sublime Text, or Netbeans.
-    - For most tutorials here, Visula Studio Code will be used. 
+    - For most tutorials here, Visual Studio Code will be used. 
 
 2) If you are using a Mac, install Homebrew. This is a package-management software that you can install in your terminal, and will 
 help you quickly and easily download any packages you may need, like npm, Python, or Ruby.
