@@ -11,6 +11,6 @@ This will make it easier to share your project among multiple members, integrate
 to link to your Github account when applying for a position.
     - Create a Github <a href="https://github.com/join">here</a>
 
-4) Look up how to set up a repository. We've created a small tutorial <a href="">here</a>, using the <a href="https://desktop.github.com">Github Desktop application.</a>
+4) Look up how to set up a repository. We've created a small tutorial <a href="Creation.md">here</a>, using the <a href="https://desktop.github.com">Github Desktop application.</a>
 
 5) Decide what you want your project to be, and program it! That's it!

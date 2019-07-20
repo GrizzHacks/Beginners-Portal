@@ -18,5 +18,8 @@
 4) Navigate to the Desktop application and follow any set-up instructions. We will clone the repo by going to the navigation bar at the top your computer's screen, clicking 'File' and then clicking 'Clone repository'.
 
 5) Paste the URL from step 3 into the appropriate space, then select where you want to keep the file. Hit the 'Clone' button.
+    - What we've just created is a local repository. This is exclusive to you, and no one can see any changes that you've made unless you push (aka upload) those files to the remote repository (what is stored on the Github website). Keep in mind, once you push code, everyone will be able to download and use that code in their own local repositories.
 
-
+6) From here, you'll be able to see all the files you have added and any changes made to those files. If you every want to push those files, use the input box on the left hand side to write a short summary (this is required) and a description if you are so inclined. 
+    - From there, click "Commit to Master."
+    
