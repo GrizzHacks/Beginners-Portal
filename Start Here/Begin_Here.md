@@ -14,5 +14,3 @@ to link to your Github account when applying for a position.
 4) Look up how to set up a repository. We've created a small tutorial <a href="Creation.md">here</a>, using the <a href="https://desktop.github.com">Github Desktop application.</a>
 
 5) Decide what you want your project to be, and program it! That's it!
-
-6) Heres a change I've made.
