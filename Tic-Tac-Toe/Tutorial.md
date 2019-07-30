@@ -1,5 +1,6 @@
 <h1>Tic-Tac-Toe Tutorial</h1>
 <h2>Use this tutorial to learn some of the basics of Python</h2>
+<h3><a href="https://www.geeksforgeeks.org/python-implementation-automatic-tic-tac-toe-game-using-random-number/">Source</a></h3>
 
 <h3>We're going to playing Tic-Tac-Toe in our Terminal! While simple, this tutorial can serve as a launch point for more complex games or other projects.</h3>
 
@@ -15,4 +16,7 @@
     - You may be wondering: Are there any tools to help me program Python? There are! If you're using VS Code, feel free to look up python extensions and install any that you feel will be beneficial. 
 
 <h2>Packages<h2>
-
+    - For this tutorial, we'll be using three different packages/modules:
+        - <a href="https://numpy.org">Numpy</a>
+        - <a href="https://docs.python.org/2/library/random.html">Random</a>
+        - <a href="https://docs.python.org/3/library/time.html">Time</a>
