@@ -17,8 +17,11 @@
 
 <h2>Packages<h2>
     - For this tutorial, we'll be using three different packages/modules:
+    
         - <a href="https://numpy.org">NumPy</a>
+        
         - <a href="https://docs.python.org/2/library/random.html">Random</a>
+        
         - <a href="https://docs.python.org/3/library/time.html">Time</a>
     <h3>NumPy</h3>
         - NumPy is able to do advanced scientific calculations and data analysis.  
