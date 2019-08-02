@@ -17,28 +17,30 @@
 
 <h2>Packages<h2>
     - For this tutorial, we'll be using three different packages/modules:
-       - <a href="https://numpy.org">NumPy</a>
-       - <a href="https://docs.python.org/2/library/random.html">Random</a>
-       - <a href="https://docs.python.org/3/library/time.html">Time</a>
+     <ul>
+         <li> <a href="https://numpy.org">NumPy</a> </li>
+         <li> <a href="https://docs.python.org/2/library/random.html">Random</a> </li>
+         <li> <a href="https://docs.python.org/3/library/time.html">Time</a> </li>
+    </ul>
     <h3>NumPy</h3>
-        - NumPy is able to do advanced scientific calculations and data analysis.  
-        - Learn more about NumPy at <a href="https://numpy.org">numpy.org</a>. There are a number of tutorials, so it may be interesting to see what you can create outside of a game of Tic-Tac-Toe.
-        - We'll need to install NumPy onto our computers. Opening the Terminal app, type in the command `sudo pip3 install numpy`. When prompted to type in a password, give the password you normally use when installing new software/are logging into the computer. 
+        <li> NumPy is able to do advanced scientific calculations and data analysis.</li>
+        <li> Learn more about NumPy at <a href="https://numpy.org">numpy.org</a>. There are a number of tutorials, so it may be interesting to see what you can create outside of a game of Tic-Tac-Toe. </li>
+        <li>We'll need to install NumPy onto our computers. Opening the Terminal app, type in the command `sudo pip3 install numpy`. When prompted to type in a password, give the password you normally use when installing new software/are logging into the computer. </li>
     <h3>Random</h3>
-        - Random gives us pseudo-random numbers for various calculations. 
-        - Don't use it for security purposes, but if you wanted to generate random numbers in the future, this is your module.
-        - The official <a href="https://docs.python.org/3/library/random.html">Python documentation</a> gives a good overview of how random works.
+    <li> Random gives us pseudo-random numbers for various calculations. </li>
+    <li> Don't use it for security purposes, but if you wanted to generate random numbers in the future, this is your module. </li>
+    <li>The official <a href="https://docs.python.org/3/library/random.html">Python documentation</a> gives a good overview of how random works.</li>
     <h3>Time</h3>
-        - Time is a module which gives us access to time-related functions. 
-        - Feel free to read up on the time module in the <a href="https://docs.python.org/3/library/time.html">official Python documentation</a>
+        <li> Time is a module which gives us access to time-related functions. <li>
+        <li> Feel free to read up on the time module in the <a href="https://docs.python.org/3/library/time.html">official Python documentation</a><li>
 
 <h2>Coding Our Game</h2>
     <h3> Lets take a look at our TicTacToe.py file. </h3> <p> Looks a litte empty, right? Well, you know how we were discussing NumPy, Random, and Time? Let's create a way to use them in our file by typing </p>
         `import numpy as np
         import random
         from time import sleep`
-     <p> There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.</p>
-    <p> If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems, including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.</p>
+      There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
+    If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems, including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.
    
    <h3> Awesome! The first step is done! </h3>
    <p> Now comes the hard part: where do we start? </p>
