@@ -20,3 +20,34 @@ We're going to playing Tic-Tac-Toe in our Terminal! While simple, this tutorial 
     You may be wondering: Are there any tools to help me program Python? There are! If you're using VS Code, feel free to look up python extensions and install any that you feel will be beneficial. 
 
 ## Packages
+
+For this tutorial, we'll be using three different packages/modules:
+
+- [NumPy](https://numpy.org)
+- [Random](https://docs.python.org/2/library/random.html)
+- [Time](https://docs.python.org/3/library/time.html)
+
+### NumPy
+- NumPy is able to do advanced scientific calculations and data analysis.
+- Learn more about NumPy at [numpy.org.](https://numpy.org) There are a number of tutorials, so it may be interesting to see what you can create outside of a game of Tic-Tac-Toe.
+- We'll need to install NumPy onto our computers. Opening the Terminal app, type in the command `sudo pip3 install numpy`. When prompted to type in a password, give the password you normally use when installing new software/are logging into the computer.
+
+### Random
+- Random gives us pseudo-random numbers for various calculations.
+- Don't use it for security purposes, but if you wanted to generate random numbers in the future, this is your module. 
+- The official [Python documentation](https://docs.python.org/3/library/random.html) gives a good overview of how random works.
+
+### Time
+- Time is a module which gives us access to time-related functions.
+- Feel free to read up on the time module in the [official Python documentation(https://docs.python.org/3/library/time.html)
+
+## Coding Our Game
+### Lets take a look at our TicTacToe.py file. 
+
+Looks a litte empty, right? Well, you know how we were discussing NumPy, Random, and Time? Let's create a way to use them in our file by typing 
+
+```python
+import numpy as np
+import random from time
+import sleep
+```
