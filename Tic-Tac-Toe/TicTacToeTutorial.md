@@ -1,10 +1,10 @@
-#Tic-Tac-Toe Tutorial
+<h1>Tic-Tac-Toe Tutorial</h1>
 >Use this tutorial to learn some of the basics of Python
 >[Reference](https://www.geeksforgeeks.org/python-implementation-automatic-tic-tac-toe-game-using-random-number/)
 
 We're going to playing Tic-Tac-Toe in our Terminal! While simple, this tutorial can serve as a launch point for more complex games or other projects.
 
-##Set-Up
+<h2>Set-Up</h2>
 
 1. You'll need to start by downloading Python 3.7.X from [Python.org](https://www.python.org) Python can be downloaded for Windows, Linux, Mac, and other OS's. 
 *NOTE*: This tutorial will take place on a Mac, so you may need to look up terminal commands for your own operating system.
@@ -19,4 +19,4 @@ We're going to playing Tic-Tac-Toe in our Terminal! While simple, this tutorial 
 
     You may be wondering: Are there any tools to help me program Python? There are! If you're using VS Code, feel free to look up python extensions and install any that you feel will be beneficial. 
 
-##Packages
+<h2>Packages</h2>
