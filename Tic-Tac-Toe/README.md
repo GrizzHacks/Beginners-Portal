@@ -36,17 +36,12 @@
 
 <h2>Coding Our Game</h2>
     <h3> Lets take a look at our TicTacToe.py file. </h3> 
-     Looks a litte empty, right? Well, you know how we were discussing NumPy, Random, and Time? Let's create a way to use them in our file by typing 
-     ```
-     import numpy as np 
-     import random from time 
-     import sleep
-     ```
-      There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
-    If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems, including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.
-   
-   <h3> Awesome! The first step is done! </h3>
-   <p> Now comes the hard part: where do we start? </p>
+	<p>Looks a litte empty, right? Well, you know how we were discussing NumPy, Random, and Time? Let's create a way to use them in our file by typing </p>
+	<code>import numpy as np
+	import random from time
+	import sleep</code>
+	
+
 
 
 
