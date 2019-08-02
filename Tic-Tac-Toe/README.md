@@ -17,12 +17,9 @@
 
 <h2>Packages<h2>
     - For this tutorial, we'll be using three different packages/modules:
-    
-        - <a href="https://numpy.org">NumPy</a>
-        
-        - <a href="https://docs.python.org/2/library/random.html">Random</a>
-        
-        - <a href="https://docs.python.org/3/library/time.html">Time</a>
+       - <a href="https://numpy.org">NumPy</a>
+       - <a href="https://docs.python.org/2/library/random.html">Random</a>
+       - <a href="https://docs.python.org/3/library/time.html">Time</a>
     <h3>NumPy</h3>
         - NumPy is able to do advanced scientific calculations and data analysis.  
         - Learn more about NumPy at <a href="https://numpy.org">numpy.org</a>. There are a number of tutorials, so it may be interesting to see what you can create outside of a game of Tic-Tac-Toe.
@@ -38,14 +35,14 @@
 <h2>Coding Our Game</h2>
     1) Lets take a look at our TicTacToe.py file. Looks a litte empty, right? Well, you know how we were discussing NumPy, Random, and Time? Let's create a way to use them in our file by typing
         import numpy as np
-        import random`
+        import random
         from time import sleep
-        
-    -- There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
+      
+   There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
 
-    --If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems, including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.
+   If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems, including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.
 
-    2) Awesome! The first step is done! Now comes the hard part: where do we start?
+   2) Awesome! The first step is done! Now comes the hard part: where do we start?
 
 
 
