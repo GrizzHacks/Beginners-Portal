@@ -33,16 +33,16 @@
         - Feel free to read up on the time module in the <a href="https://docs.python.org/3/library/time.html">official Python documentation</a>
 
 <h2>Coding Our Game</h2>
-    1) Lets take a look at our TicTacToe.py file. Looks a litte empty, right? Well, you know how we were discussing NumPy, Random, and Time? Let's create a way to use them in our file by typing
-        import numpy as np
+    <h3> Lets take a look at our TicTacToe.py file. </h3> <p> Looks a litte empty, right? Well, you know how we were discussing NumPy, Random, and Time? Let's create a way to use them in our file by typing </p>
+        `import numpy as np
         import random
-        from time import sleep
-      
-   There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
-
-   If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems, including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.
+        from time import sleep`
+     <p> There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.</p>
+    <p> If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems, including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.</p>
    
-   2) Awesome! The first step is done! Now comes the hard part: where do we start?
+   <h3> Awesome! The first step is done! </h3>
+   <p> Now comes the hard part: where do we start? </p>
+
 
 
 
