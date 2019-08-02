@@ -31,14 +31,17 @@
     <li> Don't use it for security purposes, but if you wanted to generate random numbers in the future, this is your module. </li>
     <li>The official <a href="https://docs.python.org/3/library/random.html">Python documentation</a> gives a good overview of how random works.</li>
     <h3>Time</h3>
-        <li> Time is a module which gives us access to time-related functions. <li>
-        <li> Feel free to read up on the time module in the <a href="https://docs.python.org/3/library/time.html">official Python documentation</a><li>
+        <li> Time is a module which gives us access to time-related functions. </li>
+        <li> Feel free to read up on the time module in the <a href="https://docs.python.org/3/library/time.html">official Python documentation</a></li>
 
 <h2>Coding Our Game</h2>
-    <h3> Lets take a look at our TicTacToe.py file. </h3> <p> Looks a litte empty, right? Well, you know how we were discussing NumPy, Random, and Time? Let's create a way to use them in our file by typing </p>
-        `import numpy as np
-        import random
-        from time import sleep`
+    <h3> Lets take a look at our TicTacToe.py file. </h3> 
+     Looks a litte empty, right? Well, you know how we were discussing NumPy, Random, and Time? Let's create a way to use them in our file by typing 
+     ```
+     import numpy as np 
+     import random from time 
+     import sleep
+     ```
       There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
     If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems, including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.
    
