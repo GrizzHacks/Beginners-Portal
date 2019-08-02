@@ -41,7 +41,7 @@
    There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
 
    If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems, including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.
-
+   
    2) Awesome! The first step is done! Now comes the hard part: where do we start?
 
 
