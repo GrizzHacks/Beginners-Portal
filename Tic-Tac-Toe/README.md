@@ -2,7 +2,7 @@
 >Use this tutorial to learn some of the basics of Python  
 >[Reference](https://www.geeksforgeeks.org/python-implementation-automatic-tic-tac-toe-game-using-random-number/)
 
-We're going to playing Tic-Tac-Toe in our Terminal! While simple, this tutorial can serve as a launch point for more complex games or other projects.
+We're going to creating an automated game of Tic-Tac-Toe in our Terminal! While simple, this tutorial can serve as a launch point for more complex games or other projects.
 
 ## Set-Up
 
@@ -51,3 +51,43 @@ import numpy as np
 import random from time
 import sleep
 ```
+
+There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
+
+>If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.
+
+### Awesome! The first step is done!
+
+Now comes the hard part: where do we start?
+
+Let's think; what do we need to play Tic-Tac-Toe?
+>Since this game is automated - meaning there is no user input - we don't need to factor in indivdual decisions. Everything is done by the computer
+
+1) We need a 3x3 grid
+2) We need to make sure spaces are empty, and that a virtual player can place their piece there 
+3) We need to randomly determine where a player places their piece
+4) We need to text if the score is a win, loose, or draw for the player
+
+That seems like a pretty good list. We can always come back and add things on.
+
+### Let's make our 3x3 grid
+
+We're going to write a Python function in order to make our grid. Functions are recognized by the `def` keyword. We use functions to perform specific calculations, keep our code organized, and avoid certain code from running when it isn't needed.
+>[Learn More About Python Functions](https://www.tutorialspoint.com/python3/python_functions) 
+
+Let's write this function under where we imported our modules/package:
+
+```python
+def create_board():
+    return(np.array([[0,0,0],
+                     [0,0,0],
+                     [0,0,0]]))
+```
+`create_board()` is the name of our function, and what we'll use to 'call' the function later on. 
+*Note* Functions don't actually do anything when we run a file, unless we call them. We'll see this in action later on.
+
+Functions are weird in that if we don't specify a `return` statement inside of them,they won't give us anything back. [This website](https://www.python-course.eu/python3_functions.php) gives a great overview of how `return` works and why we need it.
+
+### Great! Now, let's check that spaces on the board are empty, and assign the position of a player
+
+
