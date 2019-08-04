@@ -88,7 +88,7 @@ def create_board():
 
 Functions are weird in that if we don't specify a `return` statement inside of them,they won't give us anything back. [This website](https://www.python-course.eu/python3_functions.php) gives a great overview of how `return` works and why we need it.
 
-### Great! Now, let's check which spaces on the board are empty, and assign the position of a player
+### Great! Now, let's check which spaces on the board are empty, and assign a random position for a player
 
 Because we're doing two tasks, let's create two functions. Our first function will check which spaces on the board are empty. The nifty thing is is that this function can be used later on when determining which spaces the player can choose as the board becomes more full.
 
@@ -124,7 +124,7 @@ A few things:
         >(2,0) | (2,1) | (2,2)
     - Then, we move all of the available options out of the function with the `return` statement for use elsewhere in the project.
 
-That's confusing, right? [This website](https://www.digitalocean.com/community/tutorials/how-to-construct-for-loops-in-python-3) does a good job of covering for loops, and gives more information about the nested for loop. If you're still unsure of what is going on, feel free to look up more tutorials and ask for help. Programming is a learning game!
+That's confusing, right? [This website](https://www.digitalocean.com/community/tutorials/how-to-construct-for-loops-in-python-3) does a good job of covering `for` loops, and gives more information about the nested `for` loop. If you're still unsure of what is going on, feel free to look up more tutorials and ask for help. Programming is a learning game!
 
 The `if` statement is also new. [This site](https://www.w3schools.com/python/python_conditions.asp) gives an overview of conditionals and `if` statements. 
 
@@ -132,5 +132,18 @@ The `if` statement is also new. [This site](https://www.w3schools.com/python/pyt
 
 All set? Remember, it's okay to ask for help. This stuff is confusing, and we only have 24 hours. Make the most of the people around you and online tutorials.
 
+Let's assign a random position for the player. This function will work no matter whether it's the first move, or the final move.
+
+Type 
+
+```python
+def random_position(board, player):
+    selection = empty_spaces(board)
+    determined_location = random.choice(selection)
+    board[determined_location] = player
+    
+    return(board)
+```
+into our file. 
 
 
