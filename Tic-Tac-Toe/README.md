@@ -1,6 +1,6 @@
 # Tic-Tac-Toe Tutorial
 >Use this tutorial to learn some of the basics of Python  
->[Reference](https://www.geeksforgeeks.org/python-implementation-automatic-tic-tac-toe-game-using-random-number/)
+>[See the Original Tutorial](https://www.geeksforgeeks.org/python-implementation-automatic-tic-tac-toe-game-using-random-number/)
 
 We're going to creating an automated game of Tic-Tac-Toe in our Terminal! While simple, this tutorial can serve as a launch point for more complex games or other projects.
 
@@ -88,6 +88,49 @@ def create_board():
 
 Functions are weird in that if we don't specify a `return` statement inside of them,they won't give us anything back. [This website](https://www.python-course.eu/python3_functions.php) gives a great overview of how `return` works and why we need it.
 
-### Great! Now, let's check that spaces on the board are empty, and assign the position of a player
+### Great! Now, let's check which spaces on the board are empty, and assign the position of a player
+
+Because we're doing two tasks, let's create two functions. Our first function will check which spaces on the board are empty. The nifty thing is is that this function can be used later on when determining which spaces the player can choose as the board becomes more full.
+
+Write the function below into TicTacToe.py:
+
+```python
+def empty_spaces(board):
+    available = []
+
+    for row in range(len(board)):
+        for column in range(len(board)):
+
+            if board[row][column] == 0:
+                available.append((row, column))
+    
+    return(available)
+```
+A few things:
+- Our function `empty_spaces()` is accepting a parameter called `board`. This represents our tic-tac-toe board/array. However, the cool thing is, we didn't actually need to call it `board.` We could just as easily have called it `cat` or `gamespace.` 
+- The first line in the function is creating an empty list called `available.` Lists are enormously useful in storing information. 
+    - We see this information storage happening in the `if` statement through the `append()` function. 
+    >[Read more about Python lists](https://www.w3schools.com/python/python_lists.asp)
+- After our list creation, we see a nested `for` loop (two or more `for` loops together). There's a lot of new information here.
+    - `row` and `column` are completely arbitrary. You'll typically see these variables represented as `i` and `j`. 
+    - The first `for` loop says that 'for each row (the [0,0,0] in our array) in the range of 0 - number of rows in our array (`len(board)`), do this:"
+        >*Note* Numbering in programming languages is a bit weird. While we define the first row as 1 and the last as 3, Python sees it as row 0 to row 2. 
+    - The second `for` loop says 'for each column (the 0 in a row) in the range of 0 - number of columns (# of 0's), do this:"
+        >*Note* The numbering characteristic seen with the rows is also seen with the columns; so the first 0 is numbered '0,' while the last is numbered '2'
+    - Our `if` statement says "if the space in `board` corresponding to coordinate (row, column) is equivalent to 0, then we will add it to our available list.
+        >*Note* Coordinates move from left to right and top to bottom. So our array has the coordinates of  
+        >(0,0) | (0,1) | (0,2)
+        >(1,0) | (1,1) | (1,2)
+        >(2,0) | (2,1) | (2,2)
+    - Then, we move all of the available options out of the function with the `return` statement for use elsewhere in the project.
+
+That's confusing, right? [This website](https://www.digitalocean.com/community/tutorials/how-to-construct-for-loops-in-python-3) does a good job of covering for loops, and gives more information about the nested for loop. If you're still unsure of what is going on, feel free to look up more tutorials and ask for help. Programming is a learning game!
+
+The `if` statement is also new. [This site](https://www.w3schools.com/python/python_conditions.asp) gives an overview of conditionals and `if` statements. 
+
+#### Take a quick break, then come back to work on the next function.
+
+All set? Remember, it's okay to ask for help. This stuff is confusing, and we only have 24 hours. Make the most of the people around you and online tutorials.
+
 
 
