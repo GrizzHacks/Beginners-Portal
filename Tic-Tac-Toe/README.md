@@ -119,8 +119,8 @@ A few things:
         >-- **Note** -- The numbering characteristic seen with the rows is also seen with the columns; so the first 0 is numbered '0,' while the last is numbered '2'
     - Our `if` statement says "if the space in `board` corresponding to coordinate (row, column) is equivalent to 0, then we will add it to our available list.
         >-- **Note** -- Coordinates move from left to right and top to bottom. So our array has the coordinates of  
-        >(0,0) | (0,1) | (0,2)
-        >(1,0) | (1,1) | (1,2)
+        >(0,0) | (0,1) | (0,2)  
+        >(1,0) | (1,1) | (1,2)  
         >(2,0) | (2,1) | (2,2)
     - Then, we move all of the available options out of the function with the `return` statement for use elsewhere in the project.
 
