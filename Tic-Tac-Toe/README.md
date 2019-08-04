@@ -60,7 +60,7 @@ There's a lot going on there, right? All we're really saying is "Hey, I want the
 
 Now comes the hard part: where do we start?
 
-Let's think; what do we need to play Tic-Tac-Toe?
+Let's think: what do we need to play Tic-Tac-Toe?
 >Since this game is automated - meaning there is no user input - we don't need to factor in indivdual decisions. Everything is done by the computer
 
 1) We need a 3x3 grid
@@ -83,8 +83,8 @@ def create_board():
                      [0,0,0],
                      [0,0,0]]))
 ```
-`create_board()` is the name of our function, and what we'll use to 'call' the function later on. 
-*Note* Functions don't actually do anything when we run a file, unless we call them. We'll see this in action later on.
+`create_board()` is the name of our function, and what we'll use to 'call' the function later on.  
+**Note** Functions don't actually do anything when we run a file, unless we call them. We'll see this in action later on.
 
 Functions are weird in that if we don't specify a `return` statement inside of them,they won't give us anything back. [This website](https://www.python-course.eu/python3_functions.php) gives a great overview of how `return` works and why we need it.
 
@@ -114,11 +114,11 @@ A few things:
 - After our list creation, we see a nested `for` loop (two or more `for` loops together). There's a lot of new information here.
     - `row` and `column` are completely arbitrary. You'll typically see these variables represented as `i` and `j`. 
     - The first `for` loop says that 'for each row (the [0,0,0] in our array) in the range of 0 - number of rows in our array (`len(board)`), do this:"
-        >*Note* Numbering in programming languages is a bit weird. While we define the first row as 1 and the last as 3, Python sees it as row 0 to row 2. 
+        >**Note** Numbering in programming languages is a bit weird. While we define the first row as 1 and the last as 3, Python sees it as row 0 to row 2. 
     - The second `for` loop says 'for each column (the 0 in a row) in the range of 0 - number of columns (# of 0's), do this:"
-        >*Note* The numbering characteristic seen with the rows is also seen with the columns; so the first 0 is numbered '0,' while the last is numbered '2'
+        >**Note** The numbering characteristic seen with the rows is also seen with the columns; so the first 0 is numbered '0,' while the last is numbered '2'
     - Our `if` statement says "if the space in `board` corresponding to coordinate (row, column) is equivalent to 0, then we will add it to our available list.
-        >*Note* Coordinates move from left to right and top to bottom. So our array has the coordinates of  
+        >**Note** Coordinates move from left to right and top to bottom. So our array has the coordinates of  
         >(0,0) | (0,1) | (0,2)
         >(1,0) | (1,1) | (1,2)
         >(2,0) | (2,1) | (2,2)
