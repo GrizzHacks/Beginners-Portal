@@ -164,3 +164,59 @@ into the file.
 
 ### Wonderful! Now we just need to figure out whether a player has won, lost, or drawn with their opponent.
 
+How many ways can a player win?  
+- Three marks in a horizontal row
+- Three marks in a vertical row
+- Three marks in a diagnoal row
+
+We'll have to program functions to check for each of these possibilities. Let's tackle the vertical row:
+
+```python
+def col_win(board, player):
+    for row in range(len(board)):
+        win = True
+
+        for column in range(len(board)):
+            if board[column][row] != player:
+                win = False
+                continue
+
+        if win == True:
+            return(win)
+
+    return(win)
+```
+
+#### __ What We've Learned __
+
+Using what you've learned, can you figure out what's going on? 
+- The new information we see is the `continue` statement, which returns to the top of the loop (in this case the second `for` loop) and ignores any remaining statements. 
+- Remember, `return()` ends the execution of a function. So if an entire column contains the same player marker, we make sure `True` is passed out of the function. 
+>If you can't quite understand what's happening, trying drawing it out. Remember, `win` is a variable assigned to the boolean `True`. If at any point a space in the column is not the required player marker, win will be set to `False` for the entire column. 
+
+------
+
+Now let's work on determining if there are three of the same mark in a horizontal row:
+
+```python
+def row_win(board, player):
+    for row in range(len(board)):
+        win = True
+
+        for column in range(len(board)):
+            if board[row, column] != player:
+                win = False
+                continue
+            
+        if win == True:
+            return(win)
+    return(win)
+```
+
+#### __What We've Learned__
+- Notice how our `if` statement is slightly different this time around? We're only able to check a tile using `board[row, column]` because of NumPy. Otherwise, we would only be able to do this via `board[row][column]`.
+- Make sure you understand how this section of code works, and then move on to programming the diagonal row checker.
+
+----
+
+
