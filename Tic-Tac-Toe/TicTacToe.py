@@ -56,3 +56,45 @@ def row_win(board, player):
         if win == True:
             return(win)
     return(win)
+
+# Check to see if a diagonal area contains the same player token
+def diag_win(board, player):
+    win = True
+
+    for tile in range(len(board)):
+        if board[tile, tile] != player:
+            win = False
+    return(win)
+
+# Check if there was a winner and who that winner was
+def evaluation(board):
+    winner = 0
+
+    for player in [1, 2]:
+        if (col_win(board, player) or row_win(board, player) or diag_win(board, player)):
+            winner = player
+        
+    if np.all(board != 0) and winner == 0:
+        winner = -1
+    return winner
+
+# Main function to start gameplay
+def play_game():
+    board, winner, counter = create_board(), 0, 1
+    print(board)
+    sleep(2)
+
+    while winner == 0:
+        for player in [1, 2]:
+            board = random_position(board, player)
+            print("Board after " + str(counter) + " move")
+            print(board)
+            sleep(2)
+            counter += 1
+            winner = evaluation(board)
+            if winner != 0:
+                break
+    return(winner)
+
+# Runs the entire program
+print("Winner is: " + str(play_game()))

@@ -68,7 +68,7 @@ Let's think: what do we need to play Tic-Tac-Toe?
 1) We need a 3x3 grid
 2) We need to make sure spaces are empty, and that a virtual player can place their piece there 
 3) We need to randomly determine where a player places their piece
-4) We need to text if the score is a win, loose, or draw for the player
+4) We need to display if the score is a win, loose, or draw for the player and for which player
 
 That seems like a pretty good list. We can always come back and add things on.
 
@@ -219,4 +219,105 @@ def row_win(board, player):
 
 ----
 
+Finally, let's see if the player has filled a diagonal section of the board:
 
+```python
+def diag_win(board, player):
+    win = True
+
+    for tile in range(len(board)):
+        if board[tile, tile] != player:
+            win = False
+    return(win)
+```
+
+#### __What We've Learned__
+- Try to understand why we only need one return statement in this function. If it's difficult, that's okay. Try visualizing the process on paper, or asking a friend.
+- Everything else we have seen before, but if you still struggling to understand, work through the earlier sections again, or ask a friend for help.
+
+### Finally, it's time to decide if there is a winner, or if we have a CATS (tie) game. Remember, our functions above didn't actually tell us if and who the winner was, only if the same player marker was in a winning orientation
+
+```python
+def evaluation(board):
+    winner = 0
+
+    for player in [1, 2]:
+        if (col_win(board, player) or row_win(board, player) or diag_win(board, player)):
+            winner = player
+        
+    if np.all(board != 0) and winner == 0:
+        winner = -1
+    return winner
+```
+#### __What We've Learned__
+- See those `or` and `and` statements? Those are known as [logical operators](https://www.programiz.com/python-programming/operators). 
+    - `or` gives us the ability to return the boolean value `True` if one of the three functions returns `True`. If we get a `True` value, then we assign the player value (either `1` or `2`) to the `winner` variable. 
+    - `and` returns `True` ONLY when all the conditions are satisfied; in this case, all of the tiles on the board are not equal to zero, and the `winner` variable equals 0. 
+
+### Great. We've got all of these functions. So how do we actually make them do anything?
+In order for our game to actually work, we need to call the functions (we say this same procedure done in the `random_position()` function). We can create an overarching function to do this for us.
+
+```python
+def play_game():
+    board, winner, counter = create_board(), 0, 1
+    print(board)
+    sleep(2)
+
+    while winner == 0:
+        for player in [1, 2]:
+            board = random_position(board, player)
+            print("Board after " + str(counter) + " move")
+            print(board)
+            sleep(2)
+            counter += 1
+            winner = evaluation(board)
+            if winner != 0:
+                break
+    return(winner)
+```
+#### __What We've Learned__
+Can you figure out what's going on?
+- We can assign values to multiple variables at a time. On the first line, board gets assigned the `return` value of the create_board() function, `winner` = 0, and `counter` = 1
+- Remember importing `time`? We're finally using the `sleep` function to delay the program for 2 seconds
+- `while` loops are new. They say to the computer that while a condition is true, continue to run the code. [Learn more about while loops](https://www.w3schools.com/python/python_while_loops.asp)
+- Using `+` statements in a `print` statement is known as [concatenation](https://www.pythonforbeginners.com/concatenation/string-concatenation-and-formatting-in-python).
+It allows us insert variables into a string easily. 
+>We need to use `str` to convert an integer into a string. Try using the Python shell and write a small `print` statement without `str` to see what happens if it's missing.
+-`break` in a new keywork that terminates a loop. In this case, if we reach `break`, we will exit our `for` loop, and the `while` loop will stop automatically because `winner` is no longer 0.
+
+### Finally, we need to actually run all of this code. This can only be done outside of a function in the main file.
+
+Type this final line of code below all of the functions, flush all the way to the left.
+
+```python
+print("Winner is: " + str(play_game()))
+```
+
+## Running the game
+
+Go ahead and look through your code. See if there are any noticable issues that the text editor has picked up for you. If not, be sure to save the file. Now, let's test our code!
+
+To do this, we need to navigate to where our code is stored on our computer. For me, I have it in a folder on my desktop called "Beginners-Portal". 
+- I'll go ahead and open my terminal, making sure I'm not in the Python shell (remember, we can exit out of it by typing `quit()`)
+- Then, I'll type `cd Desktop/Beginners-Portal/Beginners-Portal/Tic-Tac-Toe` to reach the location where I have TicTacToe.py stored.
+    >You'll follow the same procedure of typing `cd` then path to reach your file. So, if it's on your desktop, you'd type `cd Desktop`. If it's in your Documents, you'd type `cd Documents`. 
+    >Do a quick internet search if you're still unclear on how to navigate to your file's location.
+- Finally, I'll type `python3.7 TicTacToe.py` into the command line, and vola!
+
+### Difficulties
+
+If you find the code doesn't run, see what type of error the terminal gives you. See if you can figure out where in the code you've made a mistake, and otherwise take to the internet to see if you can figure it out. Programming is all about problem solving. I know you can do it!
+
+## Next steps
+
+You've done it! You've programmed an automated game of Tic-Tac-Toe! Think of all you can do with your new-found knowledge. Here are some ideas to get you started:
+- This game is a little slow. Can you figure out a way to speed it up?
+- If the game ends up in a tie, we get "Winner is: -1". What does that mean? Can you change this output to something more meaningful?
+- Try to make a game of Tic-Tac-Toe that is interactive. Look at how to get user input, store information, and allow for multiple players.
+- Make a new game. Try Connect 4, or Mancala. Now that you've picked up some of the basics, there is an endless world of possibilities in front of you.
+
+#Good luck Hackers!
+
+------
+
+##### This code comes from the source listed at the top of the page. No commercial gain is sought from using the code, and is instead intended for educational purposes. 
