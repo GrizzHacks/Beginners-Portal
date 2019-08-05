@@ -187,7 +187,7 @@ def col_win(board, player):
     return(win)
 ```
 
-#### __ What We've Learned __
+#### __What We've Learned__
 
 Using what you've learned, can you figure out what's going on? 
 - The new information we see is the `continue` statement, which returns to the top of the loop (in this case the second `for` loop) and ignores any remaining statements. 
