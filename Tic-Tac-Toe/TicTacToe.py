@@ -18,3 +18,10 @@ def empty_spaces(board):
                 available.append((row, column))
     
     return(available)
+
+def random_position(board, player):
+    selection = empty_spaces(board)
+    determined_location = random.choice(selection)
+    board[determined_location] = player
+    
+    return(board)

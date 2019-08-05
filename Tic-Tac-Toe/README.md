@@ -51,8 +51,10 @@ import numpy as np
 import random from time
 import sleep
 ```
-
-There's a lot going on there, right? All we're really saying is "Hey, I want these packages/modules." So we bring them in through the keyword `import`. When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." As for `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
+#### __What We've Learned__
+- In this section, we're saying "Hey, I want these packages/modules." We can bring them in through the keyword `import`. 
+- When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." 
+- Using `from,` we're selecting a specific function from the time module to import, rather than bringing in the entire thing.
 
 >If you notice your system is unable to import numpy, make sure you've installed it correctly. An important part of being a programmer is knowing how to solve problems including errors like this. Go to your favorite search engine and try to solve the issue. If you have difficulties, reach out to those around you.
 
@@ -83,10 +85,11 @@ def create_board():
                      [0,0,0],
                      [0,0,0]]))
 ```
-`create_board()` is the name of our function, and what we'll use to 'call' the function later on.  
--- **Note** -- Functions don't actually do anything when we run a file, unless we call them. We'll see this in action later on.
+#### __What We've Learned__
 
-Functions are weird in that if we don't specify a `return` statement inside of them,they won't give us anything back. [This website](https://www.python-course.eu/python3_functions.php) gives a great overview of how `return` works and why we need it.
+- `create_board()` is the name of our function, and what we'll use to 'call' the function later on.  
+    - Functions are weird in that if we don't specify a `return` statement inside of them,they won't give us anything back. [This website](https://www.python-course.eu/python3_functions.php) gives a great overview of how `return` works and why we need it.
+>-- **Note** -- Functions don't actually do anything when we run a file, unless we call them. We'll see this in action later on.
 
 ### Great! Now, let's check which spaces on the board are empty, and assign a random position for a player
 
@@ -106,7 +109,8 @@ def empty_spaces(board):
     
     return(available)
 ```
-A few things:
+#### __What We've Learned__
+
 - Our function `empty_spaces()` is accepting a parameter called `board`. This represents our tic-tac-toe board/array. However, the cool thing is, we didn't actually need to call it `board.` We could just as easily have called it `cat` or `gamespace.` 
 - The first line in the function is creating an empty list called `available.` Lists are enormously useful in storing information. 
     - We see this information storage happening in the `if` statement through the `append()` function. 
@@ -144,6 +148,19 @@ def random_position(board, player):
     
     return(board)
 ```
-into our file. 
+into the file. 
 
+#### __What We've Learned__
+
+- This function is called `random_position()` and accepts two parameters: `board` and `player`. Respectively, they represent the gameboard and which player is making their move.
+- `selection = empty_spaces(board)` is calling our `empty_spaces()` function, and assigning its result to the variable `selection`. 
+    - Notice how we have `board` in-between the parenthesis? We need to do this because `empty_spaces()` is expecting a variable, known in this context as an argument.  
+        >This is seen when we define `empty_spaces(board)` 
+    - We're only able to assign a value to selection because we have a `return` statement in our `empty_spaces()` function. In this case, we are assigning `selection` to a list of the empty spaces in the board.
+- The next line uses the random module. We call random's `choice()` function to randomly select one of the empty spaces in the board, which all come from the `selection` variable. The specific tile that was chosen is then assigned to the `determined_location` variable.
+- Our final, non-return line says "Place the respective player token at the spot that was randomly selected in the above lines"
+    > This ultimately determines what we see printed in the terminal when we run the program.
+- Finally, we return `board` to whatever called the `random_position()` function.
+
+### Wonderful! Now we just need to figure out whether a player has won, lost, or drawn with their opponent.
 
