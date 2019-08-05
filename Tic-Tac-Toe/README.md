@@ -39,7 +39,7 @@ For this tutorial, we'll be using three different packages/modules:
 
 ### Time
 - Time is a module which gives us access to time-related functions.
-- Feel free to read up on the time module in the [official Python documentation(https://docs.python.org/3/library/time.html)
+- Feel free to read up on the time module in the [official Python documentation](https://docs.python.org/3/library/time.html)
 
 ## Coding Our Game
 ### Lets take a look at our TicTacToe.py file. 
