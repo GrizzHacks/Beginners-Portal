@@ -309,7 +309,7 @@ To do this, we need to navigate to where our code is stored on our computer.
 >For me, I have it in a folder on my desktop called "Beginners-Portal". I'll type `cd Desktop/Beginners-Portal/Beginners-Portal/Tic-Tac-Toe` to reach the location where I have TicTacToe.py stored.
 >Do a quick internet search if you're still unclear on how to navigate to your file's location.
 - You can check if TicTacToe.py is there by typing `ls,` which lists all the files and folders in a given location. Look for "TicTacToe.py"
-- Finally, you'll type `python3.7 TicTacToe.py` into the command line, and vola!
+- Finally, you'll type `python3.7 TicTacToe.py` into the Terminal, and vola!
 
 ### Difficulties
 
