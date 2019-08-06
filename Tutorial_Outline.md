@@ -1,13 +1,42 @@
-<h1> Requirements/Prerequisits </h1>
-  Place all software and hardware requirements here. Include links to any processees you do not want to cover, or cannot cover.
-  You may want to include a "Getting set-up" section here.
-  
-<h1> Walk-through </h1>
-  Detailed step by step instructions on how to go from point A to point B to point .... point Z.
-  Include images if/when applicable, and be sure to caption them with the step and a short description
-  
-<h1>Finished Product </h1>
-  Show what the finished project is, and propose a few ideas on how to build off of what was just taught.
-  
-<h1>Trouble-shooting</h1>
-  Point out any common issues a person could have, as well as proposals for solutions to those problems.
+# Project Title
+>Summary
+>Citations
+
+Include a brief one or two sentence summary of what the project is/does/accomplishes.
+
+## Set-Up
+
+Include any languages people may need to install and how to install them.
+
+Include any packages that people will use, as well as a short summary of what they do
+  - Explain how a person may need to download/install a package
+
+## Coding Our ___
+
+Include step-by-step instructions on what a programmer should type. 
+- If necessary, discuss some of the planning steps that programmers may need to go through.
+
+Include a 'What We've Learned' section to discuss new information, or clarify code that may be difficult to understand.
+
+Break the code process up into different sections
+
+## Running the __
+
+Include how to run the program.
+
+## Difficulties
+
+Explain any difficulties that may appear when you run the program.
+
+## Next Steps
+
+Describe improvements people could make on the existing code.
+Give ideas on what they can do with their new-found knowledge.
+
+Don't tell people exactly what to do, give them ideas. This is the final section people should see
+
+
+If you feel it's necessary, include the following in a footer at the bottom of the page:
+##### This code comes from the source listed at the top of the page. No commercial gain is sought from using the code, and is instead intended for educational purposes.
+
+
