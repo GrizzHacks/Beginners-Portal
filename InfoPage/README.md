@@ -1,5 +1,5 @@
 # Info Page
->Use this tutorial to learn how to use HTML and CSS
+>Use this tutorial to learn how to use HTML and CSS    
 >[See the Original Guidelines](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-tribute-page)
 
 We're going to create a webpage telling visitors all about our favorite superhero. This tutorial is perfect for getting started with website development.
