@@ -15,7 +15,7 @@ We're going to creating an automated game of Tic-Tac-Toe in our Terminal! While 
 
     We'll exit out of the shell by typing `quit()`, but if you'd like to keep exploring, [this website](https://www.python-course.eu/python3_interactive.php) gives a nice overview of what you can do.
 
-3. Go ahead and open up a new file in your text editor. We'll name this file 'TicTacToe.py.' Be sure to save it to a location where you can find it later. Or save it so that you can share it to Github. 
+3. Go ahead and open up a new file in your text editor. We'll name this file 'TicTacToe.py.' Save it to a location where you can find it later by clicking 'File -> Save,' renaming it, and changing the save location to the file where your Github Repository is located, or your Desktop, or etc...
 
     You may be wondering: Are there any tools to help me program Python? There are! If you're using VS Code, feel free to look up python extensions and install any that you feel will be beneficial. 
 
@@ -30,7 +30,8 @@ For this tutorial, we'll be using three different packages/modules:
 ### NumPy
 - NumPy is able to do advanced scientific calculations and data analysis.
 - Learn more about NumPy at [numpy.org.](https://numpy.org) There are a number of tutorials, so it may be interesting to see what you can create outside of a game of Tic-Tac-Toe.
-- We'll need to install NumPy onto our computers. Opening the Terminal app, type in the command `sudo pip3 install numpy`. When prompted to type in a password, give the password you normally use when installing new software/are logging into the computer.
+- We'll need to install NumPy onto our computers. Opening the Terminal, type in the command `sudo pip3 install numpy`. When prompted to type in a password, give the password you normally use when installing new software/are logging into the computer.
+>You will not see the passwork line expand as you type in your password. 
 
 ### Random
 - Random gives us pseudo-random numbers for various calculations.
@@ -39,7 +40,7 @@ For this tutorial, we'll be using three different packages/modules:
 
 ### Time
 - Time is a module which gives us access to time-related functions.
-- Feel free to read up on the time module in the [official Python documentation(https://docs.python.org/3/library/time.html)
+- Feel free to read up on the time module in the [official Python documentation](https://docs.python.org/3/library/time.html)
 
 ## Coding Our Game
 ### Lets take a look at our TicTacToe.py file. 
@@ -48,9 +49,11 @@ Looks a litte empty, right? Well, you know how we were discussing NumPy, Random,
 
 ```python
 import numpy as np
-import random from time
-import sleep
+import random 
+from time import sleep
 ```
+Copy the code exactly as shown in the grey box. Make sure to do the same whenever you see a grey box.
+
 #### __What We've Learned__
 - In this section, we're saying "Hey, I want these packages/modules." We can bring them in through the keyword `import`. 
 - When we use the keyword `as,` we're telling the compilor "When I write np, I'm actually calling the NumPy package." 
@@ -85,6 +88,9 @@ def create_board():
                      [0,0,0],
                      [0,0,0]]))
 ```
+
+Make sure the `def` keywork is flush with the left-hand side and the `return` statement is indented one tab. Each time you see a new function, you'll need to make sure `def` is flush with the left-hand side and the following line is indented one tab. Otherwise, you'll get an error when you run the program. 
+
 #### __What We've Learned__
 
 - `create_board()` is the name of our function, and what we'll use to 'call' the function later on.  
@@ -297,12 +303,13 @@ print("Winner is: " + str(play_game()))
 
 Go ahead and look through your code. See if there are any noticable issues that the text editor has picked up for you. If not, be sure to save the file. Now, let's test our code!
 
-To do this, we need to navigate to where our code is stored on our computer. For me, I have it in a folder on my desktop called "Beginners-Portal". 
-- I'll go ahead and open my terminal, making sure I'm not in the Python shell (remember, we can exit out of it by typing `quit()`)
-- Then, I'll type `cd Desktop/Beginners-Portal/Beginners-Portal/Tic-Tac-Toe` to reach the location where I have TicTacToe.py stored.
-    >You'll follow the same procedure of typing `cd` then path to reach your file. So, if it's on your desktop, you'd type `cd Desktop`. If it's in your Documents, you'd type `cd Documents`. 
-    >Do a quick internet search if you're still unclear on how to navigate to your file's location.
-- Finally, I'll type `python3.7 TicTacToe.py` into the command line, and vola!
+To do this, we need to navigate to where our code is stored on our computer.   
+- Open your terminal, and make sure you're not in the Python shell (remember, we can exit out of it by typing `quit()`)
+- You'll want to type `cd` then the path to reach your file. So, if it's on your desktop, you'd type `cd Desktop`. If it's in your Documents, you'd type `cd Documents`. 
+>For me, I have it in a folder on my desktop called "Beginners-Portal". I'll type `cd Desktop/Beginners-Portal/Beginners-Portal/Tic-Tac-Toe` to reach the location where I have TicTacToe.py stored.
+>Do a quick internet search if you're still unclear on how to navigate to your file's location.
+- You can check if TicTacToe.py is there by typing `ls,` which lists all the files and folders in a given location. Look for "TicTacToe.py"
+- Finally, you'll type `python3.7 TicTacToe.py` into the Terminal, and vola!
 
 ### Difficulties
 
@@ -316,7 +323,7 @@ You've done it! You've programmed an automated game of Tic-Tac-Toe! Think of all
 - Try to make a game of Tic-Tac-Toe that is interactive. Look at how to get user input, store information, and allow for multiple players.
 - Make a new game. Try Connect 4, or Mancala. Now that you've picked up some of the basics, there is an endless world of possibilities in front of you.
 
-#Good luck Hackers!
+# Good luck Hackers!
 
 ------
 
