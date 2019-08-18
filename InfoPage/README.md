@@ -14,6 +14,28 @@ Hypertext Markup Language (HTML) and Cascading Style Sheets (CSS) are easy to wo
 
 ## Coding Our Webpage
 
+Our goal is to tell a visitor to our site all about our favorite superhero. For this tutorial, I'm going to be using She-Ra, but feel free to use whoever you want. 
+
+### Let's consider the basic outline of what we want our page to have, as well as what we want our code to look like.
+
+We can use small snippets of text called 'User Stories' to tell programmers what we want a site to do/have on it, or how we want to identify certain features. 
+>For this project, we'll have 8 user stories, some of which come from the reference source.
+
+#### User Stories
+- User Story 1: The HTML code should have an element with the corresponding `id="main"` and which contains all other elements. 
+>Don't worry if you don't understand what that means. We'll learn about elements and ids later on
+- User Story 2: The HTML code should have an element with the corresponding `id="title"`. This should display our superhero's name at the top of the webpage.
+- User Story 3: The HTML code should have a section that will hold an image under the `id="img-div"`.
+- User Story 4: The HTML code should have an img tag with `id="image"`. This will show an image of our superhero underneath their name.
+- User Story 5: We want to describe our image with an element that has `id="img-caption"`.
+- User Story 6: We want to give our reader some information about the superhero using an element with `id="tribute-info"`.
+- User Story 7: The page shouldn't be too long or large, so be sure to include a link to an auxilory site that gives more superhero information. Use the `id="tribute-link"`.
+- User Story 8: Our page should include some kind of animated element that the user can interact with. Use the `id="flip-card"`.
+
+Looks like a lot of info, right? The good thing is is that we don't have to tackle each of these stories all at once. In fact, they're made to be addressed one at a time. You can use this approach in other projects you may work on.
+
+### Let's go to our index.html page and write some code.
+
 <!-- Project Title
 
 Summary
