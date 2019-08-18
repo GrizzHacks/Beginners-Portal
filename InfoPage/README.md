@@ -6,7 +6,7 @@ We're going to create a webpage telling visitors all about our favorite superher
 
 ## Set-Up
 
-Hypertext Markup Language (HTML) and Cascading Style Sheets (CSS) are easy to work with and involve little advanced set-up. 
+Hyper Text Markup Language (HTML) and Cascading Style Sheets (CSS) are easy to work with and involve little advanced set-up. 
 
 1) Open a new file in your text editor. Save it to a location where you can find it later by clicking 'File -> Save,' renaming the file as 'index.html', and changing the save location to the file where your Github Repository is located, or your Desktop, or etc... 
 2) Repeat this process with a second file, but save it as 'style.css'.
@@ -35,6 +35,20 @@ We can use small snippets of text called 'User Stories' to tell programmers what
 Looks like a lot of info, right? The good thing is is that we don't have to tackle each of these stories all at once. In fact, they're made to be addressed one at a time. You can use this approach in other projects you may work on.
 
 ### Let's go to our index.html page and write some code.
+
+Type the following at the top of index.html:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+</html>
+```
+
+
+
+
 
 <!-- Project Title
 
