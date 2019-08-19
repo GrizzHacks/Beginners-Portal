@@ -6,11 +6,15 @@ We're going to create a webpage telling visitors all about our favorite superher
 
 ## Set-Up
 
-Hyper Text Markup Language (HTML) and Cascading Style Sheets (CSS) are easy to work with and involve little advanced set-up. 
+1) I recommend using Google Chrome for devloping and troubleshooting web elements. Feel free to download Google Chrome before starting this tutorial and setting it as your default browser.
+> -- NOTE -- An unfortunate fact of web design is that not all web browsers are created equal. While most things will work across different browsers, there may be specific syntax you have to use in order get things to work on Safari, Firefox, etc...    
 
-1) Open a new file in your text editor. Save it to a location where you can find it later by clicking 'File -> Save,' renaming the file as 'index.html', and changing the save location to the file where your Github Repository is located, or your Desktop, or etc... 
-2) Repeat this process with a second file, but save it as 'style.css'.
+2) Hyper Text Markup Language (HTML) and Cascading Style Sheets (CSS) are easy to work with and involve little advanced set-up. 
 
+    1) Open a new file in your text editor. Save it to a location where you can find it later by clicking 'File -> Save,' renaming the file as 'index.html', and changing the save location to the file where your Github Repository is located, or your Desktop, or etc... 
+    2) Repeat this process with a second file, but save it as 'style.css'.
+
+3) If you are using Visual Studio Code, go to the "Extensions" menu along the left-hand side of the text editor and search for "Live Server" in the Marketplace. Download and install it for later use.
 
 ## Coding Our Webpage
 
@@ -42,12 +46,74 @@ Type the following at the top of index.html:
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Superhero Info Page</title>
 </head>
+
+<body>
+    <h1>Superheros Rule!</h1>
+</body>
 </html>
 ```
 
+Copy the code exactly as shown in the grey box. Make sure to do the same whenever you see a grey box.
 
+#### What We've Learned
+- See those words inside of the angle brackets? Those are known as HTML elements, and the angle brackets denote an HTML tag. 
+    - HTML tags usually come in pairs: the opening tag (`<element>`) and the closing tag (`</element>`)
+- `<!DOCTYPE  html>` tells a web browswer that the it is looking at an HTML document
+- `<html>` is the root element of an HTML page.
+- `<head>` contains meta information about the webpage we'll see.
+> -- NOTE -- Meta data won't be displayed on the webpage itself, but rather tells the web browser what the page is about, where to get styling information from, etc...
+- `<title>` is the title of the document and is used for the page when it is added to favorites or in search-engine results. 
+- `<body>` contains the content that a viewer can actually see
+- `<h1>` defines one of six styles of heading, ranging from h1-h6. h1 is the largest.
 
+Go ahead and navigate to where your index.html file is saved on your computer. Click on it, and it should open in your default browser. You should see "Superheros Rule!" in bold lettering across the top of your screen. Notice how our title text (Superhero Info Page) is displayed in the tab.
+> This same task can be accomplished with the Live Server extension in VS Code. In the "Explorer" tab, where you see all of your open files, right click on index.html and click "Open with Live Server". You should see the same result.
+
+### We're able to address User Story (US) #2 using what we know from above. 
+
+Remember, US 2 tells us to display the name of our superhero at the top of the page. Underneath the opening `<body>` tag, make another `<h1></h1>` pair and write the name of your superhero between the two tags, just like you see with "Superheros Rule!".
+
+Change the `<h1>` tags around "Superheros Rule" to say `<h2>`. Remember, both the opening and closing tag need to be changed, and the closing tag must contain a "/".
+
+Now, in the opening tag (`<h1>`), write `id="title"` next to `h1`. Your code should look like this:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Superhero Info Page</title>
+</head>
+
+<body>
+    <h1 id="title"> She-Ra: Princess of Power </h1>
+    <h2>Superheros Rule!</h2>
+</body>
+</html>
+```
+
+If you'd like, make more content appear on your page by using `<hX> </hX>`, where X can be any value between 1 and 6.    
+Check to make sure the name of your hero is now on the webpage. If not, make sure your code looks exactly like mine, save for the names 
+
+#### What We've Learned
+- `<h1>` represents a heading element. Each subsequent heading value represents the importance of a heading and is useful not just for styling purposes, but also for those who use assistive technologies. There is typically only one `<h1>` tag per page. 
+> [Learn more about headings](https://www.w3schools.com/tags/tag_hn.asp)
+- The text in between tags is the content displayed on the page. The tags themselves are used for assignment and styling purposes.
+- `id=""` is used to identify a specific element. You may not use the same id for different elements. 
+> For example, we could not put `id="title"` in the `<h2>` tag, as it represents a unique element.    
+> [ids are used for CSS and Javascript purposes](https://www.w3schools.com/html/html_id.asp).
+
+### Now that we know more about id's, let's address US #1.
+
+Since our `<body>` tag contains all other elements on the page, let's add `id="main"`. Our opening `<body>` tag should now look like this:    
+`<body id="main">`
+
+#### What We've Learned
+- `<body>` contains the visual page elements and surrounds all other page elements. 
+> W3 Schools gives us a [great example](https://www.w3schools.com/html/html_intro.asp) of how to visualize the HTML page structure. Here you can see just what `<body>` does.
+
+### Let's start to style our page by centering the name of our superhero
 
 
 <!-- Project Title
