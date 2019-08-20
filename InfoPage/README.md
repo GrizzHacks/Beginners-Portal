@@ -9,8 +9,6 @@ We're going to create a webpage telling visitors all about our favorite superher
 1) I recommend using Google Chrome for devloping and troubleshooting web elements. Feel free to download Google Chrome before starting this tutorial and setting it as your default browser.
 > -- NOTE -- An unfortunate fact of web design is that not all web browsers are created equal. While most things will work across different browsers, there may be specific syntax you have to use in order get things to work on Safari, Firefox, etc... 
 
-<!-- Explain how to se up developer tools -->
-
 2) Hyper Text Markup Language (HTML) and Cascading Style Sheets (CSS) are easy to work with and involve little advanced set-up. 
 
     1) Open a new file in your text editor. Save it to a location where you can find it later by clicking 'File -> Save,' renaming the file as 'index.html', and changing the save location to the file where your Github Repository is located, or your Desktop, or etc... 
@@ -138,10 +136,16 @@ In index.html, under `<head>`, write:
 `<link rel="stylesheet" href="style.css">`
 
 Save both files, then open index.html in your web browser and ensure the name of your superhero is centered at the top of the page.
-> If it is not, make sure your code looks like the example code. Otherwise, use Google and your friends to try and figure out what is going on. Make use of the browser-specific developer tools as well. 
+> If it is not, make sure your code looks like the example code. Otherwise, use Google and your friends to try and figure out what is going on. Make use of the browser-specific developer tools as well.    
+> To use Chrome Developer Tools, you can right-click anywhere on the page and select "Inspect" or go to "View > Developer". Explore what you're seeing. 
 
 ### What We've Learned
-
+- Remember when we added the `id="name"` to our HTML tags? Here we see them finally at work! 
+    - "#name" is an id selector, and styles the element with the specific id name. Because each HTML page should only have one specific id name, it is easy to identify just what on the page is changing.
+- We style each id using the CSS properties that are inside of the curly braces ({}).
+    - [`display: x`](https://www.w3schools.com/cssref/pr_class_display.asp): Specifies how an element renders. In this example we are using a flex container.
+    > By specifying the display as flex, we are using the flexbox layout. [Read more about the Flexbox layout](https://internetingishard.com/html-and-css/flexbox/).
+    - [`flex-direction: x`](https://www.w3schools.com/cssref/css3_pr_flex-direction.asp): Flex-direction is best used in the Flexbox layout, and specifies the direction of flexible items (in this case the `<h1>` and `<h2>` elements)
 <!-- Project Title
 
 Summary
