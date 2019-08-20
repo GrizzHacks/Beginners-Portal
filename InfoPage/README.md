@@ -104,7 +104,7 @@ Check to make sure the name of your hero is now on the webpage. If not, make sur
 > For example, we could not put `id="title"` in the `<h2>` tag, as it represents a unique element.    
 > [ids are used for CSS and Javascript purposes](https://www.w3schools.com/html/html_id.asp).
 
-### Now that we know more about id's, let's address US #1.
+### Now that we know more about ids, let's address US #1.
 
 Since our `<body>` tag contains all other elements on the page, let's add `id="main"`. Our opening `<body>` tag should now look like this:    
 `<body id="main">`
