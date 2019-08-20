@@ -139,13 +139,36 @@ Save both files, then open index.html in your web browser and ensure the name of
 > If it is not, make sure your code looks like the example code. Otherwise, use Google and your friends to try and figure out what is going on. Make use of the browser-specific developer tools as well.    
 > To use Chrome Developer Tools, you can right-click anywhere on the page and select "Inspect" or go to "View > Developer". Explore what you're seeing. 
 
-### What We've Learned
+#### What We've Learned
 - Remember when we added the `id="name"` to our HTML tags? Here we see them finally at work! 
     - "#name" is an id selector, and styles the element with the specific id name. Because each HTML page should only have one specific id name, it is easy to identify just what on the page is changing.
 - We style each id using the CSS properties that are inside of the curly braces ({}).
     - [`display: x`](https://www.w3schools.com/cssref/pr_class_display.asp): Specifies how an element renders. In this example we are using a flex container.
     > By specifying the display as flex, we are using the flexbox layout. [Read more about the Flexbox layout](https://internetingishard.com/html-and-css/flexbox/).
     - [`flex-direction: x`](https://www.w3schools.com/cssref/css3_pr_flex-direction.asp): Flex-direction is best used in the Flexbox layout, and specifies the direction of flexible items (in this case the `<h1>` and `<h2>` elements)
+    - [`width: x`](https://www.w3schools.com/cssref/pr_dim_width.asp): Sets the width (length) of an element. 
+    > By setting width equal to 100%, we ensure that the width of each element is as wide as the screen someone is working on.
+    - [`height: x`](https://www.w3schools.com/cssref/pr_dim_height.asp): Sets the height on an element, but does not include padding, borders, or margins.
+    > -- NOTE -- See how I use two different types of units for height? They each control the length of an element in slightly different ways. '%' is relative to the size of the screen, while `px` is absolute. [Read about CSS units](https://www.w3schools.com/cssref/css_units.asp)
+    > width and height play into the [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp).    
+    > Read about the box model above to understand padding, border, and margin. 
+    - [`text-align: x`](https://www.w3schools.com/cssref/pr_text_text-align.asp): Specifies the horizontal placement of text in an element. 
+    > -- NOTE -- Text (i.e. "Superheros Rule") is NOT equivalent to element. While CSS controls an element (i.e. h1 or h2), we use CSS attributes to control objects like text, images, etc...
+- `<link>` is an example of a meta element. It tells the HTML page where to find the styling information for the webpage. [Read about `<link>` and its attributes](https://www.w3schools.com/tags/tag_link.asp)
+> -- NOTE -- `href=x` points to the location on your computer where style.css is located. If you find you are unable to style your webpage, make sure this attribute is pointing to the correct location on your computer. You can move up a "level" from where index.html is located by typing "../".
+
+There a ton of attributes we can apply to `main` and `title`. [This website](https://www.w3schools.com/cssref/default.asp) gives you a complete list of all the CSS properties we can apply to our id selectors. 
+
+We will continue to utilize the [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp) and [Flexbox layout](https://internetingishard.com/html-and-css/flexbox/) to style our info page. If you haven't already, please acquaint yourself with these items.
+
+### Let's get back on track and tackle US #3 
+
+
+
+
+
+
+
 <!-- Project Title
 
 Summary
