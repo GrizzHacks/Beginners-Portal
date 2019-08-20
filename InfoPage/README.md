@@ -7,7 +7,9 @@ We're going to create a webpage telling visitors all about our favorite superher
 ## Set-Up
 
 1) I recommend using Google Chrome for devloping and troubleshooting web elements. Feel free to download Google Chrome before starting this tutorial and setting it as your default browser.
-> -- NOTE -- An unfortunate fact of web design is that not all web browsers are created equal. While most things will work across different browsers, there may be specific syntax you have to use in order get things to work on Safari, Firefox, etc...    
+> -- NOTE -- An unfortunate fact of web design is that not all web browsers are created equal. While most things will work across different browsers, there may be specific syntax you have to use in order get things to work on Safari, Firefox, etc... 
+
+<!-- Explain how to se up developer tools -->
 
 2) Hyper Text Markup Language (HTML) and Cascading Style Sheets (CSS) are easy to work with and involve little advanced set-up. 
 
@@ -115,6 +117,30 @@ Since our `<body>` tag contains all other elements on the page, let's add `id="m
 
 ### Let's start to style our page by centering the name of our superhero
 
+Let's open up style.css and type the following:
+
+```CSS
+#main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+
+#title {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
+```
+In index.html, under `<head>`, write:    
+`<link rel="stylesheet" href="style.css">`
+
+Save both files, then open index.html in your web browser and ensure the name of your superhero is centered at the top of the page.
+> If it is not, make sure your code looks like the example code. Otherwise, use Google and your friends to try and figure out what is going on. Make use of the browser-specific developer tools as well. 
+
+### What We've Learned
 
 <!-- Project Title
 
