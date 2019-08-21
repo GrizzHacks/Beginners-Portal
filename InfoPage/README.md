@@ -29,7 +29,7 @@ We can use small snippets of text called 'User Stories' to tell programmers what
 - User Story 1: The HTML code should have an element with the corresponding `id="main"` and which contains all other elements. 
 >Don't worry if you don't understand what that means. We'll learn about elements and ids later on
 - User Story 2: The HTML code should have an element with the corresponding `id="title"`. This should display our superhero's name at the top of the webpage.
-- User Story 3: The HTML code should have a section that will hold an image under the `id="img-div"`.
+- User Story 3: The HTML code should have a section that will hold an image with `id="img-div"`.
 - User Story 4: The HTML code should have an img tag with `id="image"`. This will show an image of our superhero underneath their name.
 - User Story 5: We want to describe our image with an element that has `id="img-caption"`.
 - User Story 6: We want to give our reader some information about the superhero using an element with `id="tribute-info"`.
@@ -149,12 +149,12 @@ Save both files, then open index.html in your web browser and ensure the name of
     - [`width: x`](https://www.w3schools.com/cssref/pr_dim_width.asp): Sets the width (length) of an element. 
     > By setting width equal to 100%, we ensure that the width of each element is as wide as the screen someone is working on.
     - [`height: x`](https://www.w3schools.com/cssref/pr_dim_height.asp): Sets the height on an element, but does not include padding, borders, or margins.
-    > -- NOTE -- See how I use two different types of units for height? They each control the length of an element in slightly different ways. '%' is relative to the size of the screen, while `px` is absolute. [Read about CSS units](https://www.w3schools.com/cssref/css_units.asp)    
-    > width and height play into the [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp).    
+    > -- NOTE -- See how I use two different types of units for height? They each control the length of an element in slightly different ways. '%' is relative to the size of the screen, while `px` is absolute. [Read about CSS units.](https://www.w3schools.com/cssref/css_units.asp)    
+    > Width and height play into the [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp).    
     > Read about the box model above to understand padding, border, and margin. 
     - [`text-align: x`](https://www.w3schools.com/cssref/pr_text_text-align.asp): Specifies the horizontal placement of text in an element. 
     > -- NOTE -- Text (i.e. "Superheros Rule") is NOT equivalent to element. While CSS controls an element (i.e. h1 or h2), we use CSS attributes to control objects like text, images, etc...
-- `<link>` is an example of a meta element. It tells the HTML page where to find the styling information for the webpage. [Read about `<link>` and its attributes](https://www.w3schools.com/tags/tag_link.asp)
+- `<link>` is an example of a meta element. It tells the HTML page where to find the styling information for the webpage. [Read about `<link>` and its attributes.](https://www.w3schools.com/tags/tag_link.asp)
 > -- NOTE -- `href=x` points to the location on your computer where style.css is located. If you find you are unable to style your webpage, make sure this attribute is pointing to the correct location on your computer. You can move up a "level" from where index.html is located by typing "../".
 
 There a ton of attributes we can apply to `main` and `title`. [This website](https://www.w3schools.com/cssref/default.asp) gives you a complete list of all the CSS properties we can apply to our id selectors. 
@@ -163,6 +163,61 @@ We will continue to utilize the [CSS Box Model](https://www.w3schools.com/css/cs
 
 ### Let's get back on track and tackle US #3 
 
+We'll be using the `<figure>` tag to define a section that will hold an image. [Go ahead and read about `<figure`>](https://www.w3schools.com/tags/tag_figure.asp). Try to include it into the HTML document with the id "img-div" (don't worry about adding the `<img>` tag just yet).
+
+Your code should now have the following section underneath the `<h1>` and `<h2>` tags:
+
+```HTML
+<figure id="img-div">
+</figure>
+```
+
+#### What We've Learned
+- `<figure>` is used to denote self-contained content; aka content that is not dependent upon the main "flow" of the webpage.[This website gives a good explaination under "Usage Notes"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) 
+    - It typically contains visual imagery
+> -- NOTE -- The flow of a webpage is how developers talk about how different elements interact with one another. If we were to move our `<figure>` element to another point on the HTML document - say, about `<h1>` and `<h2>`, we would not affect how they interact with one another, and with the rest of the webpage.
+> [Reading about semantic HTML](https://www.lifewire.com/why-use-semantic-html-3468271) and [HTML sections](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#Sectioning_roots) may aid in understanding.
+
+### With that done, let's handle US #4 and #5
+
+Within the `<figure>` tags, let's add `<img>` with id "image" and `<figcaption></figcaption>` with id "img-caption". 
+
+You should now see
+
+```HTML
+<figure id="img-div">
+    <img id="image">
+    <figcaption id="img-caption"></figcaption>
+</figure>
+```
+
+If we look at our HTML page in a web browser, we don't see an image or any description. Why? 
+
+[Look at this documentation](https://www.w3schools.com/tags/tag_figcaption.asp) and compare it to our code. What are we missing? Based on what you know, try to add an image of your superhero and a caption to the webpage. 
+
+------
+
+Figure it out? If not, that's okay! You're learning something brand new. 
+
+My code now looks like this:
+
+```HTML
+<figure id="img-div">
+    <img id="image" src="shera.jpeg" alt="She-Ra stands strong">
+    <figcaption id="img-caption">She-Ra (center) stands alongside her friends and allies</figcaption>
+</figure>
+```
+
+#### What We've Learned
+-  [`<img>`](https://www.w3schools.com/tags/tag_img.asp) is unique in that we do not require a closing tag. We do, however, require two attributes: "src" and "alt".
+    - "src" specifies where to find an image (its URL). I saved my image to where I stored my HTML and CSS documents, but I could have also used its URL on Google Images.
+    - "alt" is displayed when the webpage is unable to find or render an image. For users who use screen readers, this is used to describe what the image shows (since `<figcaption>` is not always used).
+    > -- NOTE -- `<img>` CANNOT have a closing tag. A quick Google search can explain why this is if you are interested.
+- `<figcaption>` gives our image a caption to describe what a user sees.
+
+Take a look at your webpage. You should now see an image of your superhero, as well as a caption describing the image. 
+
+Go ahead and try to style these new elements using what you have discovered. I'll explain what I've done:
 
 
 

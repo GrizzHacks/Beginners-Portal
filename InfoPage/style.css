@@ -1,13 +1,19 @@
 #main {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100%; */
     height: 100%;
-
 }
 
 #title {
     text-align: center;
     width: 100%;
     height: 50px;
+
+    /* This is optional, and alter how I've chosen to style my webpage */
+    margin-top: 0;
+    color: palevioletred;
+    background-color: lemonchiffon;
+    border: 10px solid thistle;
+    font-size: 50px;
 }
