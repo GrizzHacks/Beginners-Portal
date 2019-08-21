@@ -149,7 +149,7 @@ Save both files, then open index.html in your web browser and ensure the name of
     - [`width: x`](https://www.w3schools.com/cssref/pr_dim_width.asp): Sets the width (length) of an element. 
     > By setting width equal to 100%, we ensure that the width of each element is as wide as the screen someone is working on.
     - [`height: x`](https://www.w3schools.com/cssref/pr_dim_height.asp): Sets the height on an element, but does not include padding, borders, or margins.
-    > -- NOTE -- See how I use two different types of units for height? They each control the length of an element in slightly different ways. '%' is relative to the size of the screen, while `px` is absolute. [Read about CSS units](https://www.w3schools.com/cssref/css_units.asp)
+    > -- NOTE -- See how I use two different types of units for height? They each control the length of an element in slightly different ways. '%' is relative to the size of the screen, while `px` is absolute. [Read about CSS units](https://www.w3schools.com/cssref/css_units.asp)    
     > width and height play into the [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp).    
     > Read about the box model above to understand padding, border, and margin. 
     - [`text-align: x`](https://www.w3schools.com/cssref/pr_text_text-align.asp): Specifies the horizontal placement of text in an element. 
