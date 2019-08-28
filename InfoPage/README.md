@@ -129,7 +129,8 @@ Let's open up style.css and type the following:
 #title {
     text-align: center;
     width: 100%;
-    height: 50px;
+    height: fit-content;
+    box-sizing: border-box;
 }
 ```
 In index.html, under `<head>`, write:    
@@ -154,6 +155,8 @@ Save both files, then open index.html in your web browser and ensure the name of
     > Read about the box model above to understand padding, border, and margin. 
     - [`text-align: x`](https://www.w3schools.com/cssref/pr_text_text-align.asp): Specifies the horizontal placement of text in an element. 
     > -- NOTE -- Text (i.e. "Superheros Rule") is NOT equivalent to element. While CSS controls an element (i.e. h1 or h2), we use CSS attributes to control objects like text, images, etc...
+    - ['box-sizing: x'](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing): Determines how the width and height are calculated.
+    > Typically CSS does not consider padding, border, and margin values to be included in width and height measurements. By specifying box-sizing as `border-box`, we are able to including the padding and border measurements into the entire value of width and/or height.
 - `<link>` is an example of a meta element. It tells the HTML page where to find the styling information for the webpage. [Read about `<link>` and its attributes.](https://www.w3schools.com/tags/tag_link.asp)
 > -- NOTE -- `href=x` points to the location on your computer where style.css is located. If you find you are unable to style your webpage, make sure this attribute is pointing to the correct location on your computer. You can move up a "level" from where index.html is located by typing "../".
 
