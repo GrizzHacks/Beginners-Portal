@@ -44,3 +44,32 @@
     font: bold 20px sans-serif;
     color: #1C7C54;
 }
+
+#tribute-info {
+    /* This is optional, and alter how I've chosen to style my webpage */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font: 15px;
+}
+
+.tribute-paragraph {
+    /* I don't want to style this, so I'll leave it empty */
+}
+
+#tribute-list {
+    /* This is optional, and alter how I've chosen to style my webpage */
+    list-style-type: square;
+}
+
+.tribute-item {
+    color: palevioletred;
+    padding: 5px;
+}
+
+
+
+
+

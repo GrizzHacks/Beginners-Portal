@@ -63,7 +63,7 @@ Copy the code exactly as shown in the grey box. Make sure to do the same wheneve
 - `<!DOCTYPE  html>` tells a web browswer that the it is looking at an HTML document
 - `<html>` is the root element of an HTML page.
 - `<head>` contains meta information about the webpage we'll see.
-> -- NOTE -- Meta data won't be displayed on the webpage itself, but rather tells the web browser what the page is about, where to get styling information from, etc...
+> Meta data won't be displayed on the webpage itself, but rather tells the web browser what the page is about, where to get styling information from, etc...
 - `<title>` is the title of the document and is used for the page when it is added to favorites or in search-engine results. 
 - `<body>` contains the content that a viewer can actually see
 - `<h1>` defines one of six styles of heading, ranging from h1-h6. h1 is the largest.
@@ -150,15 +150,15 @@ Save both files, then open index.html in your web browser and ensure the name of
     - [`width: x`](https://www.w3schools.com/cssref/pr_dim_width.asp): Sets the width (length) of an element. 
     > By setting width equal to 100%, we ensure that the width of each element is as wide as the screen someone is working on.
     - [`height: x`](https://www.w3schools.com/cssref/pr_dim_height.asp): Sets the height on an element, but does not include padding, borders, or margins.
-    > -- NOTE -- See how I use two different types of units for height? They each control the length of an element in slightly different ways. '%' is relative to the size of the screen, while `px` is absolute. [Read about CSS units.](https://www.w3schools.com/cssref/css_units.asp)    
+    > See how I use two different types of units for height? They each control the length of an element in slightly different ways. '%' is relative to the size of the screen, while `px` is absolute. [Read about CSS units.](https://www.w3schools.com/cssref/css_units.asp)    
     > Width and height play into the [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp).    
     > Read about the box model above to understand padding, border, and margin. 
     - [`text-align: x`](https://www.w3schools.com/cssref/pr_text_text-align.asp): Specifies the horizontal placement of text in an element. 
-    > -- NOTE -- Text (i.e. "Superheros Rule") is NOT equivalent to element. While CSS controls an element (i.e. h1 or h2), we use CSS attributes to control objects like text, images, etc...
+    > Text (i.e. "Superheros Rule") is NOT equivalent to element. While CSS controls an element (i.e. h1 or h2), we use CSS attributes to control objects like text, images, etc...
     - ['box-sizing: x'](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing): Determines how the width and height are calculated.
     > Typically CSS does not consider padding, border, and margin values to be included in width and height measurements. By specifying box-sizing as `border-box`, we are able to including the padding and border measurements into the entire value of width and/or height.
 - `<link>` is an example of a meta element. It tells the HTML page where to find the styling information for the webpage. [Read about `<link>` and its attributes.](https://www.w3schools.com/tags/tag_link.asp)
-> -- NOTE -- `href=x` points to the location on your computer where style.css is located. If you find you are unable to style your webpage, make sure this attribute is pointing to the correct location on your computer. You can move up a "level" from where index.html is located by typing "../".
+> `href=x` points to the location on your computer where style.css is located. If you find you are unable to style your webpage, make sure this attribute is pointing to the correct location on your computer. You can move up a "level" from where index.html is located by typing "../".
 
 There a ton of attributes we can apply to `main` and `title`. [This website](https://www.w3schools.com/cssref/default.asp) gives you a complete list of all the CSS properties we can apply to our id selectors. 
 
@@ -178,7 +178,7 @@ Your code should now have the following section underneath the `<h1>` and `<h2>`
 #### What We've Learned
 - `<figure>` is used to denote self-contained content; aka content that is not dependent upon the main "flow" of the webpage.[This website gives a good explaination under "Usage Notes"](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) 
     - It typically contains visual imagery
-> -- NOTE -- The flow of a webpage is how developers talk about how different elements interact with one another. If we were to move our `<figure>` element to another point on the HTML document - say, about `<h1>` and `<h2>`, we would not affect how they interact with one another, and with the rest of the webpage.
+> The flow of a webpage is how developers talk about how different elements interact with one another. If we were to move our `<figure>` element to another point on the HTML document - say, about `<h1>` and `<h2>`, we would not affect how they interact with one another, and with the rest of the webpage.
 > [Reading about semantic HTML](https://www.lifewire.com/why-use-semantic-html-3468271) and [HTML sections](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#Sectioning_roots) may aid in understanding.
 
 ### With that done, let's handle US #4 and #5
@@ -216,7 +216,7 @@ My code now looks like this:
     - The backslash is not technically required, but it does encourage proper syntax. We could have just as easily have written our tag as `<img>`
     - "src" specifies where to find an image (its URL). I saved my image to where I stored my HTML and CSS documents, but I could have also used its URL on Google Images.
     - "alt" is displayed when the webpage is unable to find or render an image. For users who use screen readers, this is used to describe what the image shows (since `<figcaption>` is not always used).
-    > -- NOTE -- `<img>` CANNOT have the traditional closing tag (i.e. `</img>`). A quick Google search can explain why this is if you are interested.
+    > `<img>` CANNOT have the traditional closing tag (i.e. `</img>`). A quick Google search can explain why this is if you are interested.
 - `<figcaption>` gives our image a caption to describe what a user sees.
 
 Take a look at your webpage. You should now see an image of your superhero, as well as a caption describing the image. 
@@ -253,15 +253,49 @@ We've seen some of these items before, but others are brand new.
 > `align-items` determines the position of items along the vertical axis.
 - [`margin: x`](https://www.w3schools.com/cssref/pr_margin.asp): The attribute for setting up the spacing that surrounds an object on the page. It is actually shorthand for four individual attributes, which you can read about on the reference article. 
 > By writing `margin: 20px 0px`, I tell the webpage to render my item with a top and bottom margin of 20px, and a right and left margin of 10px. 
-> -- NOTE -- There are multiple ways to use the `margin` attribute as a shortcut for specifying our spacing. [This website provides additional information about the number of values you can apply to `margin`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin).
+> There are multiple ways to use the `margin` attribute as a shortcut for specifying our spacing. [This website provides additional information about the number of values you can apply to `margin`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin).
 - [`max-width: x`](https://www.w3schools.com/cssref/pr_dim_max-width.asp): Sets the maximum width of an element.
 - [`max-height: x`](https://www.w3schools.com/cssref/pr_dim_max-height.asp): Sets the maximum height of an element.
 - [`font: x`](https://www.w3schools.com/cssref/pr_font_font.asp): Font is another property that serves as a shortcut for five indivual attributes. 
-> -- NOTE -- You are able to specify as many or as few of the attributes as you want. In my example, I am defining the [`font-weight`](https://www.w3schools.com/cssref/pr_font_weight.asp), [`font-size`](https://www.w3schools.com/cssref/pr_font_font-size.asp), and [`font-family`](https://www.w3schools.com/cssref/pr_font_font-family.asp) attributes.
+> You are able to specify as many or as few of the attributes as you want. In my example, I am defining the [`font-weight`](https://www.w3schools.com/cssref/pr_font_weight.asp), [`font-size`](https://www.w3schools.com/cssref/pr_font_font-size.asp), and [`font-family`](https://www.w3schools.com/cssref/pr_font_font-family.asp) attributes.
 - [`color: x`](https://www.w3schools.com/cssref/pr_text_color.asp): This attribute sets the text-color of an element.
 > `color` can be defined via HEX, RGB, RGBA, HSL, HSLA, or an internal color palette. 
 
 ### Not too much more to go! Let's do US #6
+
+It's important that visitors to our website know who our superhero is! Let's write about who and what our superhero has done using the `<p>` and `<ul>` tags.
+
+Under our closing `<figure>` tag (`</figure>`), let's write the following:
+
+```HTML
+    <div id="tribute-info">
+        <p id="tribute-paragraph">
+            XXX
+        </p>
+        <ul id="tribute-list">
+            <li class="tribute-item">X</li>
+            <li class="tribute-item">X</li>
+            <li class="tribute-item">X</li>
+        </ul>
+        <p>
+            XXX
+        </p>
+    </div>
+```
+Where you see X's, type in some information about your superhero. Once you've finished, launch your page on a web browser and see what the result is.
+
+#### What We've Learned
+- [`<div>`](https://www.w3schools.com/tags/tag_div.asp): This tag defines a division or section of an HTML page. We typically wrap this around other HTML elements in order them to style on the page.
+- [`<p>`](https://www.w3schools.com/tags/tag_p.asp): The `<p>` tag defines a paragraph. It is able to display any amount of text with no special properties.
+- [`<ul>`](https://www.w3schools.com/tags/tag_ul.asp): This tag represents an unordered list. It must be used with `<li>` tags in order to display items as bullet points.
+> If you want a list of items that is order, use the [`<ol>` tag](https://www.w3schools.com/tags/tag_ol.asp).
+- [`<li>`](https://www.w3schools.com/tags/tag_li.asp): Use the `<li>` tag to define a list item. These are the elements that actually render items onto an ordered or unordered list. 
+> You may include as many or as few `<li>` tags as you wish
+- `class=""` is used among multiple elements to assign the same style to each element. In the case of our `<li>` tags, we want to make sure that each `li` element is styled the same way. [You can read more about classes here](https://www.w3schools.com/html/html_classes.asp).
+
+Go ahead and style these elements using CSS. In order to style the elements defined by a class, we'll need to write `.classname {}` in our CSS sheet.
+
+### 
 
 
 <!-- Project Title
