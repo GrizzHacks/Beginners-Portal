@@ -189,7 +189,7 @@ You should now see
 
 ```HTML
 <figure id="img-div">
-    <img id="image">
+    <img id="image"/>
     <figcaption id="img-caption"></figcaption>
 </figure>
 ```
@@ -206,25 +206,62 @@ My code now looks like this:
 
 ```HTML
 <figure id="img-div">
-    <img id="image" src="shera.jpeg" alt="She-Ra stands strong">
+    <img id="image" src="shera.jpeg" alt="She-Ra stands strong"/>
     <figcaption id="img-caption">She-Ra (center) stands alongside her friends and allies</figcaption>
 </figure>
 ```
 
 #### What We've Learned
--  [`<img>`](https://www.w3schools.com/tags/tag_img.asp) is unique in that we do not require a closing tag. We do, however, require two attributes: "src" and "alt".
+-  [`<img/>`](https://www.w3schools.com/tags/tag_img.asp) is unique in that we do not require a traditional closing tag. We do, however, require two attributes: "src" and "alt".
+    - The backslash is not technically required, but it does encourage proper syntax. We could have just as easily have written our tag as `<img>`
     - "src" specifies where to find an image (its URL). I saved my image to where I stored my HTML and CSS documents, but I could have also used its URL on Google Images.
     - "alt" is displayed when the webpage is unable to find or render an image. For users who use screen readers, this is used to describe what the image shows (since `<figcaption>` is not always used).
-    > -- NOTE -- `<img>` CANNOT have a closing tag. A quick Google search can explain why this is if you are interested.
+    > -- NOTE -- `<img>` CANNOT have the traditional closing tag (i.e. `</img>`). A quick Google search can explain why this is if you are interested.
 - `<figcaption>` gives our image a caption to describe what a user sees.
 
 Take a look at your webpage. You should now see an image of your superhero, as well as a caption describing the image. 
 
-Go ahead and try to style these new elements using what you have discovered. I'll explain what I've done:
+### Go ahead and try to style these new elements using what you have discovered. 
 
+I'll explain what I've done:
 
+```CSS
+#img-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    margin: 20px 0px;
+}
 
+#image {
+    max-width: 100%;
+    max-height: 500px; 
+}
 
+#img-caption {
+    font: bold 20px sans-serif;
+    color: #1C7C54;
+}
+```
+#### What We've Learned
+We've seen some of these items before, but others are brand new.
+- `justify-content: x` and `align-items: x`: Both tie in to how to lay out elements on a page using the flexbox layout system. If you didn't take a look at how flexbox worked before, [here is the article I referenced earlier](https://internetingishard.com/html-and-css/flexbox/).
+> For a quick reference, `justify-content` determines the position of items within the flexbox (in this case our `figure`) along the horizontal line.
+> `align-items` determines the position of items along the vertical axis.
+- [`margin: x`](https://www.w3schools.com/cssref/pr_margin.asp): The attribute for setting up the spacing that surrounds an object on the page. It is actually shorthand for four individual attributes, which you can read about on the reference article. 
+> By writing `margin: 20px 0px`, I tell the webpage to render my item with a top and bottom margin of 20px, and a right and left margin of 10px. 
+> -- NOTE -- There are multiple ways to use the `margin` attribute as a shortcut for specifying our spacing. [This website provides additional information about the number of values you can apply to `margin`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin).
+- [`max-width: x`](https://www.w3schools.com/cssref/pr_dim_max-width.asp): Sets the maximum width of an element.
+- [`max-height: x`](https://www.w3schools.com/cssref/pr_dim_max-height.asp): Sets the maximum height of an element.
+- [`font: x`](https://www.w3schools.com/cssref/pr_font_font.asp): Font is another property that serves as a shortcut for five indivual attributes. 
+> -- NOTE -- You are able to specify as many or as few of the attributes as you want. In my example, I am defining the [`font-weight`](https://www.w3schools.com/cssref/pr_font_weight.asp), [`font-size`](https://www.w3schools.com/cssref/pr_font_font-size.asp), and [`font-family`](https://www.w3schools.com/cssref/pr_font_font-family.asp) attributes.
+- [`color: x`](https://www.w3schools.com/cssref/pr_text_color.asp): This attribute sets the text-color of an element.
+> `color` can be defined via HEX, RGB, RGBA, HSL, HSLA, or an internal color palette. 
+
+### Not too much more to go! Let's do US #6
 
 
 <!-- Project Title
