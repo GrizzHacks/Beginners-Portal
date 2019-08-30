@@ -340,7 +340,7 @@ Write out the declaration blocks for each id in style.css as follows:
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100%;
+    width: 50%;
     height: 100%;
     text-align: center;
     transition: transform 0.8s;
@@ -353,7 +353,7 @@ Write out the declaration blocks for each id in style.css as follows:
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
     height: 100%;
     margin: 0;
 }
@@ -384,55 +384,40 @@ That's a lot, and probably pretty confusing, right? Let's break it down block by
         <li class="tribute-item"><a href="https://he-man.fandom.com/wiki/Bow_(She-Ra_and_the_Princesses_of_Power)" target="_blank">Bow, a master archer</a></li>
     </ul>
 ```
+> I've also chosen to style my tags using an element selector, shown here:
+```CSS
+a {
+    color: inherit;
+    text-decoration: none;
+}
+```
+- [`transition: x`](https://www.w3schools.com/css/css3_transitions.asp) is the first attribute we see that allows us to change another attribute over a fixed period of time. 
+> By specifying `transform 0.8s`, we say "perform a 3D transformation over the course of 0.8s".
+- [`transform-style: x`](https://www.w3schools.com/cssref/css3_pr_transform-style.asp): This attribute specifies how nested elements (in this case the h1 elements) are rendered in 3D space. Check out the associated link for a demo.
+> transform-style MUST be used with the transform property.
+- [`position: x`](https://www.w3schools.com/cssref/pr_class_position.asp): This attribute is a bit complex. Position doesn't position things in the terms of left or right, but rather in terms of page flow. [This webstie gives an auxiliary explaination](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+- What does it mean when we see two id selectors seperate by a comma? By during this, we are able to apply all attributes within the block to elements possessing either id (i.e. the attributes are shared among both ids).
+> Later on, you'll see two ids not seperated by a comma. This means that the second id will only be styled by the attributes when it is nested under the first id.(If you hover over the text `#flip-card:hover #tribute-link`, you'll see what I mean).
+- [`backface-visibility:x`](https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility): This property is applicable when an element is rotated in 3D space. What we consider to be the back of the flip-card can be either hidden or visible, depending on what the attribute is set to.
+- [`transform: x`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform): Setting this property a certain way allows us to rotate, scale, skew, or translate an element. 
+> In our version, we tell the webpage to rotate our element around the X-axis 180 degrees.
+- See where we write `#flip-card:hover`? `:hover` is known as a selector, and makes sure that certain attributes are only triggered when an element is moused over. [There are a number of other selectors, detailed here.](https://www.w3schools.com/cssref/css_selectors.asp)
 
-<!-- Project Title
 
-Summary
-Citations
-Include a brief one or two sentence summary of what the project is/does/accomplishes.
+It's a bit hard to see this as a flip-card, so do your best and style your flip card. If you get stuck, or want to see how I did it, look at my style.css file.
 
-Set-Up
+## That's it! Go ahead and look at what your efforts have wrought. Wonderful job!
 
-Include any languages people may need to install and how to install them.
+## Next steps
 
-Include any packages that people will use, as well as a short summary of what they do
+What's next? Quite a bit! Here are some ideas to get you started:
+- Create a new webpage in the same project for another superhero, and link to it from your first webpage
+- Try integrating Javascript into your webpage. 
+- Turn this static webpage into a dynamic one. Check out programs like Django or Ruby on Rails to help you with this.
+- Come up with an idea for another project? Use this tutorial to create a promotions page for your idea.
 
-Explain how a person may need to download/install a package
-Coding Our ___
+# Good luck Hackers!    
 
-Include step-by-step instructions on what a programmer should type.
+----
 
-If necessary, discuss some of the planning steps that programmers may need to go through.
-Include a 'What We've Learned' section to discuss new information, or clarify code that may be difficult to understand.
-
-Break the code process up into different sections
-
-Running the __
-
-Include how to run the program.
-
-Difficulties
-
-Explain any difficulties that may appear when you run the program.
-
-Next Steps
-
-Describe improvements people could make on the existing code. Give ideas on what they can do with their new-found knowledge.
-
-Don't tell people exactly what to do, give them ideas. This is the final section people should see
-
-If you feel it's necessary, include the following in a footer at the bottom of the page:
-
-This code comes from the source listed at the top of the page. No commercial gain is sought from using the code, and is instead intended for educational purposes. -->
-
----
-
-<!-- User Story #1: My tribute page should have an element with a corresponding id="main", which contains all other elements.
-User Story #2: I should see an element with a corresponding id="title", which contains a string (i.e. text) that describes the subject of the tribute page (e.g. "Dr. Norman Borlaug").
-User Story #3: I should see a div element with a corresponding id="img-div".
-User Story #4: Within the img-div element, I should see an img element with a corresponding id="image".
-User Story #5: Within the img-div element, I should see an element with a corresponding id="img-caption" that contains textual content describing the image shown in img-div.
-User Story #6: I should see an element with a corresponding id="tribute-info", which contains textual content describing the subject of the tribute page.
-User Story #7: I should see an a element with a corresponding id="tribute-link", which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of target and set it to _blank in order for your link to open in a new tab (i.e. target="_blank").
-User Story #8: The img element should responsively resize, relative to the width of its parent element, without exceeding its original size.
-User Story #9: The img element should be centered within its parent element. -->
+##### No commercial gain is sought from using the code, and is instead intended for educational purposes.
