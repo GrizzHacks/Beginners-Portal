@@ -33,8 +33,8 @@ We can use small snippets of text called 'User Stories' to tell programmers what
 - User Story 4: The HTML code should have an img tag with `id="image"`. This will show an image of our superhero underneath their name.
 - User Story 5: We want to describe our image with an element that has `id="img-caption"`.
 - User Story 6: We want to give our reader some information about the superhero using an element with `id="tribute-info"`.
-- User Story 7: The page shouldn't be too long or large, so be sure to include a link to an auxilory site that gives more superhero information. Use the `id="tribute-link"`.
-- User Story 8: Our page should include some kind of animated element that the user can interact with. Use the `id="flip-card"`.
+- User Story 7: The page shouldn't be too long or large, so be sure to include a link to an auxiliary site that gives more superhero information. Use the `id="tribute-link"`.
+- User Story 8: Our page should include some kind of animated element that the user can interact with. Use`id="flip-card"`.
 
 Looks like a lot of info, right? The good thing is is that we don't have to tackle each of these stories all at once. In fact, they're made to be addressed one at a time. You can use this approach in other projects you may work on.
 
@@ -295,8 +295,95 @@ Where you see X's, type in some information about your superhero. Once you've fi
 
 Go ahead and style these elements using CSS. In order to style the elements defined by a class, we'll need to write `.classname {}` in our CSS sheet.
 
-### 
+### We're moving on to US #7 and #8
 
+If you're interested in how I styled my paragraph and list elements, check out the [style.css page](https://github.com/GrizzHacks/Beginners-Portal/blob/master/InfoPage/style.css) attached to this tutorial. The only new attribute used is [list-style-type](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type).
+
+We're going to place our link to an auxiliary page in a flip-card! This is a bit more complicated, but I'll take things slow. 
+
+First, write the following under your final `</p>` tag:
+
+```HTML
+ <div id="flip-card">
+    <a id="tribute-link" href="YY">
+        <h1 id="flip-card-front">XX</h1>
+        <h1 id="flip-card-back">XX</h1>
+    </a>
+</div>
+```
+Write what you would want to see on the front of a flip-card between the `<h1>` tags (where the X's are) with id 'flip-card-front'. 
+
+Do the same thing for the back of the card between the `<h1>` tags with id 'flip-card-back'.
+
+Go ahead and launch your page on the web browser. Notice something weird about our front and back text? Go ahead and click on the text. 
+
+#### What We've Learned
+- What you're seeing is the results of the `<a>` tag, known as the [anchor tag](https://www.w3schools.com/tags/tag_a.asp). The anchor tag defines a hyperlink, aka a link from one webpage to another. In order to link to another webpage, we need to put the destination web address where we see the Y's in `href="YY"`. If you look at my HTML code, you'll see that I linked to She-Ra's wikipedia page.
+> Notice something else in my code? I've included `target="_blank"`. When you clicked on the front and back text, did you see how you were sent to the top of your webpage (if the webpage was large enough), or to your destination webpage in the same tab? By including the attribute `target="_blank`, I'm able to view to my destination webpage in a new tab. 
+
+### Nothing is animated yet. Let's change that by moving to CSS.
+
+Write out the declaration blocks for each id in style.css as follows:
+
+``` CSS
+#flip-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    perspective: 1020px;
+}
+
+#tribute-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+#flip-card-front, #flip-card-back {
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+}
+
+#flip-card-back {
+    transform: rotateX(180deg);
+}
+
+#flip-card:hover #tribute-link {
+    transform: rotateX(180deg);
+}
+```
+
+That's a lot, and probably pretty confusing, right? Let's break it down block by block.
+
+#### What We've Learned
+- 'flip-card' is our overarching container, and is mainly used for styling purposes.
+> Consider `perspective: x;` for a minute. It is used to determine how an object looks in 3d space. [MDN gives a great explination and imagry to explain this concept](https://developer.mozilla.org/en-US/docs/Web/CSS/perspective).    
+> In it's most basic understanding, `perspective` makes elements look like they exist in 3-dimensional space.
+- 'tribute-link' is an anchor tag. We can use this to style our text, but also ensure that by clicking anywhere on the flip-card, we are sent to the external website. 
+> If we wanted text alone to link to an external site, we could place an anchor tag around our various text elements.    
+    For example, I've added anchor tags around the elements in my unsorted list. It now looks like this:
+
+```HTML
+    <ul id="tribute-list">
+        <li class="tribute-item"><a href="https://en.wikipedia.org/wiki/Swift_Wind" target="_blank">Swift Wind, a talking unicorn</a></li>
+        <li class="tribute-item"><a href="https://he-man.fandom.com/wiki/Glimmer_(She-Ra_and_the_Princesses_of_Power)" target="_blank">Princess Gimmer, commander of the Great Rebellion</a></li>
+        <li class="tribute-item"><a href="https://he-man.fandom.com/wiki/Bow_(She-Ra_and_the_Princesses_of_Power)" target="_blank">Bow, a master archer</a></li>
+    </ul>
+```
 
 <!-- Project Title
 

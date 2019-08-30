@@ -52,11 +52,12 @@
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
-    font: 15px;
+    font-size: 20px;
 }
 
 .tribute-paragraph {
-    /* I don't want to style this, so I'll leave it empty */
+    /* This is optional, and alter how I've chosen to style my webpage */
+    margin: 20px 10px;
 }
 
 #tribute-list {
@@ -65,11 +66,55 @@
 }
 
 .tribute-item {
+    /* This is optional, and alter how I've chosen to style my webpage */
     color: palevioletred;
+    font-size: 25px;
     padding: 5px;
 }
 
+#flip-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    perspective: 1020px;
+}
 
+#tribute-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
 
+#flip-card-front, #flip-card-back {
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    margin: 0;
+}
 
+#flip-card-back {
+    transform: rotateX(180deg);
+}
+
+#flip-card:hover #tribute-link {
+    transform: rotateX(180deg);
+}
+
+a {
+/* This is optional, and alter how I've chosen to style my webpage */
+    color: inherit;
+    text-decoration: none;
+}
 
