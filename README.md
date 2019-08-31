@@ -24,8 +24,8 @@ Need a spark of inspiration, or just some more practice? Look here!
 
 ## Resource List
 Check out these organizations for a ton of great tools - all free to students!    
-[Hackathon Starter Kits and Guides](https://hack.mlh.io/learn/)
-[MLH Sponsored Software/Hosting Services for Hackers](https://hack.mlh.io/software/)
-[MLH Provided Hardware](https://hack.mlh.io/hardware/)
+[Hackathon Starter Kits and Guides](https://hack.mlh.io/learn/)    
+[MLH Sponsored Software/Hosting Services for Hackers](https://hack.mlh.io/software/)    
+[MLH Provided Hardware](https://hack.mlh.io/hardware/)    
 [Github Developer Pack](https://education.github.com/pack)
 > You do have to apply for this and verify your student status, which may take some time.
