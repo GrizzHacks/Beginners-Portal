@@ -23,7 +23,7 @@ Our goal is to show and tell an internet user all about our favorite superhero. 
 
 ### Let's consider the basic outline of what we want our page to have, as well as what we want our code to look like.
 
-We can use small snippets of text called 'User Stories' to tell programmers what we want a site to do/have on it, or how we want to identify certain features.    
+We can use small snippets of text called User Stories to tell programmers what we want a site to do/have on it, or how we want to identify certain features.    
 For this project, we'll have 8 user stories, some of which come from the reference source.
 
 #### User Stories
@@ -60,13 +60,13 @@ Copy the code exactly as shown in the grey box. Make sure to do the same wheneve
 #### What We've Learned
 - See those words inside of the angle brackets? Those are known as HTML elements, and the angle brackets denote an HTML tag. 
     - HTML tags usually come in pairs: the opening tag (`<element>`) and the closing tag (`</element>`)
-- [`<!DOCTYPE  html>`](https://www.w3schools.com/tags/tag_doctype.asp) tells a web browswer that it is looking at an HTML document
-- [`<html>`](https://www.w3schools.com/tags/tag_html.asp) is the root element of an HTML page.
-- [`<head>`](https://www.w3schools.com/tags/tag_head.asp) contains meta information about the webpage we will see.
+- [`<!DOCTYPE  html>`](https://www.w3schools.com/tags/tag_doctype.asp): Tells a web browswer that it is looking at an HTML document
+- [`<html>`](https://www.w3schools.com/tags/tag_html.asp): Exists as the root element of an HTML page.
+- [`<head>`](https://www.w3schools.com/tags/tag_head.asp): Contains meta information about the webpage we will see.
 > Metadata will not be displayed on the webpage itself, but rather tells the web browser what the page is about, where to get styling information from, etc...
-- [`<title>`](https://www.w3schools.com/tags/tag_title.asp) is the title of the document and is used for the page when it is added to "Favorites" or in search-engine results. 
-- [`<body>`](https://www.w3schools.com/tags/tag_body.asp) contains the content that a viewer can actually see
-- [`<h1>`](https://www.w3schools.com/tags/tag_hn.asp) defines one of six styles of heading, ranging from h1-h6. h1 is the largest.
+- [`<title>`](https://www.w3schools.com/tags/tag_title.asp): Defines the title of the document and is used for the page when it is added to "Favorites" or in search-engine results. 
+- [`<body>`](https://www.w3schools.com/tags/tag_body.asp): Contains the content that a viewer can actually see
+- [`<h1>`](https://www.w3schools.com/tags/tag_hn.asp): Defines one of six styles of heading, ranging from h1-h6. h1 is the largest.
 
 Go ahead and navigate to where your index.html file is saved on your computer. Click on it, and it should open in your default browser. You should see "Superheros Rule!" in bold lettering across the top of your screen. Notice how our title text ("Superhero Info Page") is displayed in the tab.
 > This same task can be accomplished with the Live Server extension in VS Code. In the "Explorer" tab, where you see all of your open files, right click on index.html and click "Open with Live Server". You should see the same result.
@@ -97,12 +97,10 @@ If you wouldd like, make more content appear on your page by using `<hX> </hX>`,
 Check to make sure the name of your hero is now on the webpage. If not, make sure your code looks exactly like mine, save for the names 
 
 #### What We've Learned
-- `<h1>` represents a heading element. Each subsequent heading value represents the importance of a heading and is useful not just for styling purposes, but also for those who use assistive technologies. There is typically only one `<h1>` tag per page. 
-> [Learn more about headings](https://www.tutorialrepublic.com/html-tutorial/html-headings.php)
+- [`<h2>`](https://www.tutorialrepublic.com/html-tutorial/html-headings.php): Represents a heading element. Each heading value represents the importance of a heading and is useful not just for styling purposes, but also for those who use assistive technologies. There is typically only one `<h1>` tag per page. 
 - The text in-between tags is the content displayed on the page. The tags themselves are used for assignment and styling purposes.
-- `id=""` is used to identify a specific element. You may not use the same id for different elements, nor may we use the id for multiple of the same element.
-> For example: we could not put `id="title"` in the `<h2>` tag, as it represents a unique element.    
-> [ids are used for CSS and Javascript purposes](https://www.w3schools.com/html/html_id.asp).
+- [`id=""`](https://www.w3schools.com/html/html_id.asp): Used to identify a specific element. You may not use the same id for different elements, nor may we use the id for multiple of the same element.
+> For example: we could not put `id="title"` in the `<h2>` tag, as it represents a unique element. 
 
 ### Now that we know more about ids, let us address US #1.
 
@@ -156,8 +154,8 @@ Save both files, then open index.html in your web browser and ensure the name of
     > Text (i.e. "Superheros Rule!") is NOT equivalent to an element. While CSS controls an element (i.e. h1 or h2), we use CSS attributes to control objects like text, images, etc...
     - ['box-sizing: x'](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing): Determines how the width and height are calculated.
     > Typically CSS does not consider padding, border, and margin values to be included in width and height measurements. By specifying box-sizing as `border-box`, we are able to including the padding and border measurements into the entire value of the width and height.
-- [`<link>`](https://www.w3schools.com/tags/tag_link.asp) is an example of a meta element. It tells the HTML page where to find the styling information for the webpage.
-> `href=x` points to the location on your computer where style.css is located. If you find you are unable to style your webpage, make sure this attribute is pointing to the correct location on your computer. You can move up a "level" from where index.html is located by typing "../".
+- [`<link>`](https://www.w3schools.com/tags/tag_link.asp): A meta element. It tells the HTML page where to find the styling information for the webpage.
+> `href=x` points to the location on your computer where style.css is located. If you find you are unable to style your webpage, make sure this attribute is pointing to the correct location on your computer. You can move up a "level" from where index.html is located by typing the following: ../
 
 There a ton of attributes we can apply to `main` and `title`. [This website](https://www.w3schools.com/cssref/default.asp) gives you a complete list of all the CSS properties we can apply to our id selectors. 
 
@@ -175,7 +173,7 @@ Your code should now have the following section underneath the `<h1>` and `<h2>`
 ```
 
 #### What We've Learned
-- `<figure>` is used to denote self-contained content; aka content that is not dependent upon the main "flow" of the webpage.[This website gives a good explaination under "Usage Notes".](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) 
+- [`<figure>`](https://www.w3schools.com/tags/tag_figure.asp): Used to denote self-contained content; aka content that is not dependent upon the main "flow" of the webpage.[This website gives a good explaination under "Usage Notes".](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure) 
     - `<figure>` typically contains visual imagery of some sort.
 > The flow of a webpage is how developers talk about how different elements interact with one another. If we were to move our `<figure>` element to another point on the HTML document - say, above `<h1>` and `<h2>` - we would not affect how the elements interact with one another and with the rest of the webpage.    
 > [Reading about semantic HTML](https://www.lifewire.com/why-use-semantic-html-3468271) and [HTML sections](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML_sections_and_outlines#Sectioning_roots) may aid in understanding.
@@ -211,12 +209,12 @@ My code now looks like this:
 ```
 
 #### What We've Learned
--  [`<img/>`](https://www.w3schools.com/tags/tag_img.asp) is unique in that we do not require a traditional closing tag. We do, however, require two attributes: "src" and "alt".
+-  [`<img/>`](https://www.w3schools.com/tags/tag_img.asp): This tag is unique in that we do not require a traditional closing tag. We do, however, require two attributes: "src" and "alt".
     - The backslash is not technically required, but it does encourage proper syntax. We could have just as easily have written our tag as `<img id="image" src="shera.jpeg" alt="She-Ra stands strong">`
     - "src" specifies where to find an image (its URL). I saved my image to where I stored my HTML and CSS documents, but I could have also used its URL on Google Images.
     - "alt" is displayed when the webpage is unable to find or render an image. For users who use screen readers, this is used to describe what the image shows (since `<figcaption>` is not always used).
     > `<img>` CANNOT have the traditional closing tag (i.e. `</img>`). A quick Google search can explain why this is if you are interested.
-- [`<figcaption>`](https://www.w3schools.com/tags/tag_figcaption.asp) gives our image a caption to describe what a user sees.
+- [`<figcaption>`](https://www.w3schools.com/tags/tag_figcaption.asp): Gives our image a caption to describe what a user sees.
 
 Take a look at your webpage. You should now see an image of your superhero, as well as a caption describing the image. 
 
@@ -389,7 +387,7 @@ a {
     text-decoration: none;
 }
 ```
-- [`transition: x`](https://www.w3schools.com/css/css3_transitions.asp) is the first attribute we see that allows us to change another attribute over a fixed period of time. 
+- [`transition: x`](https://www.w3schools.com/css/css3_transitions.asp): The first attribute we see that allows us to change another attribute over a fixed period of time. 
 > By specifying `transform 0.8s`, we say "perform a 3D transformation over the course of 0.8s".
 - [`transform-style: x`](https://www.w3schools.com/cssref/css3_pr_transform-style.asp): This attribute specifies how nested elements (in this case the h1 elements) are rendered in 3D space. Check out the associated link for a demo.
 > transform-style MUST be used with the transform property.
