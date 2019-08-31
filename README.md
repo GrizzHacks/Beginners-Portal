@@ -15,7 +15,7 @@ We'd recommend starting with these guides before trying any of the tutorials
 
 
 ## Idea Generator
-Need a spark of inspiration, or just some more practice? Look here!
+Need a spark of inspiration, or just some more practice? Look here!    
 ["I Need Practice Programming": 49 Ideas for Game Clones to Code](http://inventwithpython.com/blog/2012/02/20/i-need-practice-programming-49-ideas-for-game-clones-to-code/)    
 ["Automate the Boring Stuff"](https://automatetheboringstuff.com)
 [Project Ideas for a Wide Variety of Languages](https://www.geeksforgeeks.org/computer-science-projects/)
