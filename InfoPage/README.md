@@ -140,7 +140,7 @@ Save both files, then open index.html in your web browser and ensure the name of
 #### What We've Learned
 - Remember when we added the `id="name"` to our HTML tags? Here we see them finally at work! 
     - "#name" is an id selector, and styles the element with the specific id name. Because each HTML page should only have one specific id name, it is easy to identify just what on the page is changing.
-- We style each id using the CSS attributes that are inside of the curly braces ({}).
+- We style each id using the CSS properties that are inside of the curly braces ({}).
     - [`display: x`](https://www.w3schools.com/cssref/pr_class_display.asp): Specifies how an element renders. In this example we are using a flex container.
     > By specifying the display as flex, we are using the flexbox layout. [Read more about the Flexbox layout](https://internetingishard.com/html-and-css/flexbox/).
     - [`flex-direction: x`](https://www.w3schools.com/cssref/css3_pr_flex-direction.asp): Flex-direction is best used in the Flexbox layout, and specifies the direction of flexible items (in this case the `<h1>` and `<h2>` elements)
@@ -151,13 +151,13 @@ Save both files, then open index.html in your web browser and ensure the name of
     [Read about CSS units.](https://www.w3schools.com/cssref/css_units.asp)    
     > Width and height play into the [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp). Read about the box model to understand padding, border, and margin. 
     - [`text-align: x`](https://www.w3schools.com/cssref/pr_text_text-align.asp): Specifies the horizontal placement of text in an element. 
-    > Text (i.e. "Superheros Rule!") is NOT equivalent to an element. While CSS controls an element (i.e. h1 or h2), we use CSS attributes to control objects like text, images, etc...
+    > Text (i.e. "Superheros Rule!") is NOT equivalent to an element. While CSS controls an element (i.e. h1 or h2), we use CSS properties to control objects like text, images, etc...
     - ['box-sizing: x'](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing): Determines how the width and height are calculated.
     > Typically CSS does not consider padding, border, and margin values to be included in width and height measurements. By specifying box-sizing as `border-box`, we are able to including the padding and border measurements into the entire value of the width and height.
 - [`<link>`](https://www.w3schools.com/tags/tag_link.asp): A meta element. It tells the HTML page where to find the styling information for the webpage.
 > `href=x` points to the location on your computer where style.css is located. If you find you are unable to style your webpage, make sure this attribute is pointing to the correct location on your computer. You can move up a "level" from where index.html is located by typing the following: ../
 
-There a ton of attributes we can apply to `main` and `title`. [This website](https://www.w3schools.com/cssref/default.asp) gives you a complete list of all the CSS properties we can apply to our id selectors. 
+There a ton of properties we can apply to `main` and `title`. [This website](https://www.w3schools.com/cssref/default.asp) gives you a complete list of all the CSS properties we can apply to our id selectors. 
 
 We will continue to utilize the [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp) and [Flexbox layout](https://internetingishard.com/html-and-css/flexbox/) to style our info page. If you haven't already, please acquaint yourself with these items.
 
@@ -247,14 +247,14 @@ I'll explain what I've done:
 We've seen some of these items before, but others are brand new.
 - [`justify-content`](https://www.w3schools.com/cssref/css3_pr_justify-content.asp): Determines the position of items within the flexbox (in this case our `figure`) along the horizontal line.
 - [`align-items`](https://www.w3schools.com/cssref/css3_pr_align-items.asp): Decides the position of items along the vertical axis.
-> Both of the above attributes tie into the [flexbox layout](https://internetingishard.com/html-and-css/flexbox/) I mentioned earlier. 
-- [`margin: x`](https://www.w3schools.com/cssref/pr_margin.asp): The attribute for setting up the spacing that surrounds an object on the page. It is actually shorthand for four individual attributes, which you can read about in the reference article. 
+> Both of the above properties tie into the [flexbox layout](https://internetingishard.com/html-and-css/flexbox/) I mentioned earlier. 
+- [`margin: x`](https://www.w3schools.com/cssref/pr_margin.asp): The attribute for setting up the spacing that surrounds an object on the page. It is actually shorthand for four individual properties, which you can read about in the reference article. 
 > By writing `margin: 20px 0px`, I tell the webpage to render my item with a top and bottom margin of 20px, and a right and left margin of 10px. 
 > There are multiple ways to use the `margin` attribute as a shortcut for specifying item spacing. [This website provides additional information about the number of values you can apply to `margin`](https://developer.mozilla.org/en-US/docs/Web/CSS/margin).
 - [`max-width: x`](https://www.w3schools.com/cssref/pr_dim_max-width.asp): Sets the maximum width of an element.
 - [`max-height: x`](https://www.w3schools.com/cssref/pr_dim_max-height.asp): Sets the maximum height of an element.
-- [`font: x`](https://www.w3schools.com/cssref/pr_font_font.asp): Font is another property that serves as a shortcut for five indivual attributes. 
-> You are able to specify as many or as few of the attributes as you want. In my example, I am defining the [`font-weight`](https://www.w3schools.com/cssref/pr_font_weight.asp), [`font-size`](https://www.w3schools.com/cssref/pr_font_font-size.asp), and [`font-family`](https://www.w3schools.com/cssref/pr_font_font-family.asp) attributes.
+- [`font: x`](https://www.w3schools.com/cssref/pr_font_font.asp): Font is another property that serves as a shortcut for five indivual properties. 
+> You are able to specify as many or as few of the properties as you want. In my example, I am defining the [`font-weight`](https://www.w3schools.com/cssref/pr_font_weight.asp), [`font-size`](https://www.w3schools.com/cssref/pr_font_font-size.asp), and [`font-family`](https://www.w3schools.com/cssref/pr_font_font-family.asp) properties.
 - [`color: x`](https://www.w3schools.com/cssref/pr_text_color.asp): This attribute sets the text-color of an element.
 > `color` can be defined via HEX, RGB, RGBA, HSL, HSLA, or an internal color palette. 
 
@@ -392,12 +392,12 @@ a {
 - [`transform-style: x`](https://www.w3schools.com/cssref/css3_pr_transform-style.asp): This attribute specifies how nested elements (in this case the h1 elements) are rendered in 3D space. Check out the associated link for a demo.
 > transform-style MUST be used with the transform property.
 - [`position: x`](https://www.w3schools.com/cssref/pr_class_position.asp): This attribute is a bit complex. Position doesn't position things in the terms of left or right, but rather in terms of page flow. [This website gives an auxiliary explaination](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
-- What does it mean when we see two id selectors seperate by a comma? By doing this, we are able to apply all attributes within the block to elements possessing either id (i.e. the attributes are shared among both ids).
-> Later on, you'll see two ids not seperated by a comma. This means that the second id will only be styled by the attributes when it is nested under the first id.(If you hover over the text `#flip-card:hover #tribute-link`, you'll see what I mean).
+- What does it mean when we see two id selectors seperate by a comma? By doing this, we are able to apply all properties within the block to elements possessing either id (i.e. the properties are shared among both ids).
+> Later on, you'll see two ids not seperated by a comma. This means that the second id will only be styled by the properties when it is nested under the first id.(If you hover over the text `#flip-card:hover #tribute-link`, you'll see what I mean).
 - [`backface-visibility:x`](https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility): This property is applicable when an element is rotated in 3D space. What we consider to be the back of the flip-card can be either hidden or visible, depending on what the attribute is set to.
 - [`transform: x`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform): Setting this property a certain way allows us to rotate, scale, skew, or translate an element. 
 > In our version, we tell the webpage to rotate our element around the X-axis 180 degrees.
-- See where we write `#flip-card:hover`? `:hover` is known as a selector, and makes sure that certain attributes are only triggered when an element is moused over. [There are a number of other selectors, detailed here.](https://www.w3schools.com/cssref/css_selectors.asp)
+- See where we write `#flip-card:hover`? `:hover` is known as a selector, and makes sure that certain properties are only triggered when an element is moused over. [There are a number of other selectors, detailed here.](https://www.w3schools.com/cssref/css_selectors.asp)
 
 
 It's a bit hard to see this as a flip-card, so do your best and style your flip card. If you get stuck, or want to see how I did it, look at my style.css file.
