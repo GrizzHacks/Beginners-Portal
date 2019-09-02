@@ -11,7 +11,9 @@ We'd recommend starting with these guides before trying any of the tutorials
 ## Tutorial List
 ??Each tutorial is ranked out of 3 stars. Each tutorial is made for brand-new programmers, but some may build up upon concepts covered in previous tutorials??       
 ⭐[Build An Automated Game of Tic-Tac-Toe in Python](https://github.com/GrizzHacks/Beginners-Portal/tree/master/Tic-Tac-Toe)     
-⭐[Create a Static Website Using HTML and CSS](https://github.com/GrizzHacks/Beginners-Portal/tree/master/InfoPage)    
+⭐[Create a Static Website Using HTML and CSS](https://github.com/GrizzHacks/Beginners-Portal/tree/master/InfoPage) 
+
+### Want to use the Github Developer Pack? Here's some tutorials to help you get started
 
 
 ## Idea Generator
