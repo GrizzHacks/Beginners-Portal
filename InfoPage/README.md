@@ -1,4 +1,4 @@
-# Info Page
+# Info Page Tutorial
 >Use this tutorial to learn how to use HTML and CSS    
 >[See the Original Guidelines](https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-tribute-page)
 
