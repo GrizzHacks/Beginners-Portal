@@ -101,21 +101,21 @@ There are several ways to do this, but the simplest is to probably directly tran
 Write the following in place of the comments (signified by the backslashes):
 ```C#
 if (Input.GetKey(KeyCode.W))
-        {
-            gameObject.transform.Translate(Vector3.forward);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            gameObject.transform.Translate(-Vector3.forward);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            gameObject.transform.Translate(-Vector3.right);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            gameObject.transform.Translate(Vector3.right);
-        }
+{
+    gameObject.transform.Translate(Vector3.forward);
+}
+if (Input.GetKey(KeyCode.S))
+{
+    gameObject.transform.Translate(-Vector3.forward);
+}
+if (Input.GetKey(KeyCode.A))
+{
+    gameObject.transform.Translate(-Vector3.right);
+}
+if (Input.GetKey(KeyCode.D))
+{
+    gameObject.transform.Translate(Vector3.right);
+}
 ```
 > “gameObject” is already predefined as the `GameObject` that this script is attached to.
 
@@ -124,27 +124,28 @@ Save your file, then return to the Unity editor and press the play button. You'l
 
 We can fix this by creating a speed variable that allows the cube to move at a more reasonable pace. 
 
-Under our class declaration (`public class MovementScript : MonoBehaviour`), write `float speed = xf`, where x is any value that you decide. For this tutorial, I recommend setting it as `float speed = 0.05f`.
+Under our class declaration (`public class MovementScript : MonoBehaviour`), write:    `float speed = xf;`,    
+where x is any value that you decide. For this tutorial, I recommend setting it as `float speed = 0.05f;`.
 > We need to include the "f" at the end of our 0.05 because otherwise the value is treated as a `double`. [Read more about C# variable types here](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types)
 
 Back at our `FixedUpdate` function, integrate the `speed` variable like this:
 ```C#
- if (Input.GetKey(KeyCode.W))
-        {
-            gameObject.transform.Translate(Vector3.forward * speed);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            gameObject.transform.Translate(-Vector3.forward * speed);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            gameObject.transform.Translate(-Vector3.right * speed);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            gameObject.transform.Translate(Vector3.right * speed);
-        }
+if (Input.GetKey(KeyCode.W))
+{
+    gameObject.transform.Translate(Vector3.forward * speed);
+}
+if (Input.GetKey(KeyCode.S))
+{
+    gameObject.transform.Translate(-Vector3.forward * speed);
+}
+if (Input.GetKey(KeyCode.A))
+{
+    gameObject.transform.Translate(-Vector3.right * speed);
+}
+if (Input.GetKey(KeyCode.D))
+{
+    gameObject.transform.Translate(Vector3.right * speed);
+}
 ```
 You can play around with different speed settings until your character moves at a pace you like.
 
@@ -157,10 +158,10 @@ You can play around with different speed settings until your character moves at 
 
 ### Programming a Jump Button
 
-With the horizontal movement taken care of, we now need to move on to vertical movement. Let's program a jump button! Unlike with walking, if you hold down the jump button the player shouldn’t rise indefinitely. Therefore, we’ll use the `GetKeyDown` method so that it will only execute on the frame that the button is pressed.
+With the horizontal movement taken care of, we now need to move on to vertical movement. Let's program a jump button! Unlike with walking, if you hold down the jump button the player shouldn’t rise indefinitely. Therefore, we’ll use the [`GetKeyDown` method](https://docs.unity3d.com/ScriptReference/Input.GetKeyDown.html) so that it will only execute on the frame that the button is pressed.
 
 Editing the position directly would also be challenging with a jump feature, so instead we can take advantage of the RigidBody and use the physics method of [`AddForce`.](https://docs.unity3d.com/ScriptReference/Rigidbody.AddForce.html) 
-> We'll set the velocity to zero before initiating the force to prevent outside interactions from affecting the jump height.    
+> We'll set the [`velocity`](https://docs.unity3d.com/ScriptReference/Rigidbody-velocity.html) to zero before initiating the force to prevent outside interactions from affecting the jump height.    
 > Horizontal movement does not qualify as RigidBody velocity, so we can still control the character mid-jump.
 
 We need to use a method associated with the RigidBody component. We can access such a method by typing:
@@ -174,4 +175,90 @@ private void Start()
 
 above `private void FixedUpdate()`.
 
-[`Start()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Start.html) is a common MonoBehavior function which executes just once at the start of a scene (I'll explain this later on). We use `Start()` due to the computational resources required by the [`GetComponent` method]()
+[`Start()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Start.html) is a common MonoBehavior function which executes just once at the start of a scene (I'll explain this later on). We use `Start()` due to the computational resources required by the [`GetComponent` method](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html).    
+> By doing the above, we are storing the RigidBody in a variable, which we can access via the variable name "rigidBody".    
+
+Under our `speed` variable declaration, create a new variable called `jumpHeight`. Your code for this should look like:    
+`int jumpHeight = x;`    
+where x is any numerical value. For this example, I set x equal to 200.
+
+-----
+
+We are mostly there, but there remains one problem: the player can simply tap the jump button mid-air and jump again, allowing them to go as high as they want! Many games may employ double or triple jumping as a gameplay mechanic, but for the sake of this tutorial, we will limit the player to a single jump.  
+
+One way of checking to see if we are currently in the air is by reading the RigidBody’s velocity in the y direction. Normal movement across the plane will actually affect the vertical velocity very slightly, so we’ll check to see if it’s in some reasonable rounding error. 
+
+We'll add the following variables to the class in order accomplish this task, as well as see if we are actually falling:
+
+```C#
+bool isFalling = false;
+float fallRounding = 0.01f;
+```
+> A `bool` is short for [boolean](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/bool), which is simply a true or false variable.    
+> You'll notice that in my code, I wrote the `speed` and `fallRounding` variables on one line. You can do that as well, if it makes sense, or leave it as how I have described above.
+
+Place the following code in-line with the rest of your if-statements within the `FixedUpdate()` function:
+
+```C#
+if (!isFalling) //If we aren't falling and we've pressed space, jump
+{
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        rigidBody.velocity = Vector3.zero;
+        rigidBody.AddForce(Vector3.up * jumpHeight);
+    }
+}
+
+if (Mathf.Abs(rigidBody.velocity.y) > fallRounding) //If the absolute value of the y velocity is less than the rounding variable, we aren't falling
+    isFalling = true;
+else
+    isFalling = false;
+
+```
+ 
+#### What We've Learned
+- The `GetKeyDown` method returns true only on the first frame a key is pressed
+- To use physics interactions, we need to interact with a `GameObject’s` RigidBody component
+- Code that should only be executed once at the start should be put within the `Start` method body
+
+### Having the camera follow the player.
+
+Congratulations, you’ve now built a functional third-person controller for your game! Let’s try making one more modification: having the cameral follow the player.    
+
+Go back to the Unity editor, and select  "Main Camera" in the hierarchy. Click and drag the camera onto the player object in the hierarchy. The camera should show up below the player in the hierarchy and shifted over to the right.     
+We have made the camera a child of the player (which is now the parent). The child object will inherit any changes to the basic `GameObject` properties (position, activity, etc.), so now the camera will move the same amount as the player. 
+
+#### What We've Learned
+- We can have certain objects inherit the properties of other objects by allowing for [object parenting](https://www.tutorialspoint.com/unity/unity_transforms_and_object_parenting.htm)
+
+## Running the Game
+
+In running the game, we can better understand what a [scene](https://docs.unity3d.com/Manual/CreatingScenes.html) is.
+
+Scenes can be thought of as isolated sub-games, which can share as many assets with other scenes as you’d like. Different levels, cutscenes, and menus are generally each given their own scene. Right now, we only have one scene, which you can find in the "Assets" folder (viewable from the Projects tab near the bottom of the screen).
+> If you save and close your project, and come back to it later to find a blank editor, don’t panic! You just need to reopen the scene you were working on.
+
+To actually build a standalone executable version of our game, we’ll need to check that our scene is listed as part of the build. Go to 'File -> Build Settings' and click 'Add Open Scenes'. Then, if you want to create a build of this game, click 'Build and Run.' Select a location to save the build. 
+> Generally, it’s wise to create a new folder for this.
+
+After a moment, you should be able to play a version of your third-person game.
+
+
+## Difficulties
+
+If you encounter any errors, they should show up near the bottom of the screen or in the 'Console' tab (next to the 'Projects' tab).    
+If code is behaving in a way you don’t expect, printing a message to the console to see when a certain line is run or what value a variable has at any given point can be very helpful. > Print a message with the [`Debug.Log()` method.](https://docs.unity3d.com/ScriptReference/Debug.Log.html)
+
+## Next Steps
+From here, you’ll need to think of how you’d like your game to take shape.    
+Here are some things to consider:
+- How would you program in projectile avoidance? (Hint: look into `collision` detection and the `SetActive` method.)
+- How would you create a double jump?
+- Can you expand your game to include more characters? What about more players?
+- If you want less of an arcade feel to your controller, one thing you want to try is reducing the amount of control the player has while jumping. How might you do this?
+- If the cube is knocked over, our controls will no longer be accurate. Try to come up with another way to program the directions and motions of the cube. 
+
+# Good Luck Hackers!
+ -----
+
+ This code comes from the author listed at the top of the page, and is edited by a member of the GrizzHacks 4 team. No commercial gain is sought from using the code, and is instead intended for educational purposes.
