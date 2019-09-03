@@ -16,18 +16,18 @@ We'll be programming a third-person controller for a video game character using 
 
 ### Setting Up the Landscape
 
-Before we get right into the coding, it’s worth covering a few basic Unity concepts. You should find a 'Hierarchy' panel to the left of your editor, with "Main Camera and "Directional Light" listed inside. This panel shows all of the `GameObjects` present in your game, and their relationship to each other.
+Before we get right into the code, it’s worth covering a few basic Unity concepts. You should find a 'Hierarchy' panel to the left of your editor, with "Main Camera" and "Directional Light" listed inside. This panel shows all of the `GameObjects` present in your game, and their relationship to each other.
 > `GameObjects` are bundles of `Components`, or properties. We attach `Components` to a `GameObject` - such as a light component - to allow them to do different things in our game.     
 
 Right click in an empty spot in the hierarchy and select '3D Object -> Plane.' This will create a new `GameObject` with a few components that represents a geometric plane surface in the world. This will be our simple ground to test our controller on. 
-> Feel free to rename this plane object by selecting it in the Hierarchy and editing the name field at the very top of the Inspector panel (by default to the right of the screen).
+> Feel free to rename this plane object by selecting it in the hierarchy and editing the name field at the very top of the Inspector panel (by default to the right of the screen).
 
 Now, we’ll create a cube to represent the player character by right clicking in the heirarchy and selecting '3D Object -> Cube'. If you look at the game in the 'Scene' view at the center of the screen, you’ll see the cube bisects the plane. Either click and drag the cube up, or change the position from the 'Inspector' panel so that it sits above the plane. Rename the cube.
 
 We now need to add a couple of extra components to this player object. Scroll down to the bottom of the 'Inspector' panel and click the “Add Component” button. Search for “RigidBody” in the new menu. This will allow us to use Unity’s physics engine on this object. Press the play button above the 'Scene' view to see a runtime demonstration of your project. The cube should fall onto the “ground”.
 
 Hit the “Add Component” button again, and scroll to the bottom to find the “New script” option. Name it “MovementScript” and press “Create and Add.”
-> Don’t use a space in the script’s name; it will cause a compilation error.
+> NEVER use a space in the script’s name; it will cause a compilation error.
 
 Find the new script in the 'Inspector' panel, click the gear icon to the right of its name, and click “Edit Script”. The script will open in a text editor. We can begin to program the actions of the cube now!
 
@@ -53,7 +53,7 @@ public class MovementScript : MonoBehaviour
 }
 ```
 This will give us access to all of the basic Unity methods and should be the only namespace we need for the time being
-> It's important that the name of the class is the same as the name of the script you created (which is why spaces will not work) and that it inherits from [MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html)
+> It's important that the name of the class is the same as the name of the script you created (which is why spaces will not work) and that it inherits from MonoBehaviour.
 
 Now we're going to write a function called `FixedUpdate`. Make sure your code now looks like this:
 
@@ -62,13 +62,13 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-private void FixedUpdate()
-{
-//Movement controls
-}
+    private void FixedUpdate()
+    {
+    //Movement controls
+    }
 }
 ```
-This is very similar to one of the default functions shown in the original template: [the `Update` function.](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Update.html) The advantage to using `FixedUpdate` in our situation is that it is called at a fixed rate rather than once per game frame, as is done with the traditional `Update` function.
+This is very similar to one of the default functions shown in the original template: the `Update` function. The advantage to using `FixedUpdate` in our situation is that it is called at a fixed rate rather than once per game frame, as is done with the traditional `Update` function.
 > This is advantageous in cases where regularity is vital, such as in physics calculations. 
 
 We'll now create a series of [if-statements](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/if-else) to handle the different inputs we need to check for inside of our `FixedUpdate` function.
@@ -94,9 +94,9 @@ private void FixedUpdate()
         }
     }
 ```
-The [`GetKey` method](https://docs.unity3d.com/ScriptReference/Input.GetKey.html) returns true each frame the specified input button is down - in this case the A, W, S, and D keys. All we need to do is increment the position by some amount for as long as the button is held down.
+The `GetKey` method returns true each frame the specified input button is down - in this case the A, W, S, and D keys. All we need to do is increment the position by some amount for as long as the button is held down.
 
-There are several ways to do this, but the simplest is to probably directly translate the `GameObject` with the [`Translate` method.](https://docs.unity3d.com/ScriptReference/Transform.Translate.html)
+There are several ways to do this, but the simplest is to probably directly translate the `GameObject` with the `Translate` method.
 
 Write the following in place of the comments (signified by the backslashes):
 ```C#
@@ -126,7 +126,8 @@ We can fix this by creating a speed variable that allows the cube to move at a m
 
 Under our class declaration (`public class MovementScript : MonoBehaviour`), write:    `float speed = xf;`,    
 where x is any value that you decide. For this tutorial, I recommend setting it as `float speed = 0.05f;`.
-> We need to include the "f" at the end of our 0.05 because otherwise the value is treated as a `double`. [Read more about C# variable types here](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types)
+> We need to include the "f" at the end of our 0.05 because otherwise the value is treated as a `double`.    
+> [Read more about C# variable types here](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/value-types)
 
 Back at our `FixedUpdate` function, integrate the `speed` variable like this:
 ```C#
@@ -150,17 +151,18 @@ if (Input.GetKey(KeyCode.D))
 You can play around with different speed settings until your character moves at a pace you like.
 
 #### What We've Learned
-- Unity comes with many helpful methods, accessible by inheriting from the MonoBehaviour class.    
-- The `Update` method allows us to run some code almost continuously during runtime.
-- We can use `FixedUpdate` when applying physics interactions.
-- We can directly modify a `GameObject’s` transform values.
+- Unity comes with many helpful methods, accessible by inheriting from the [MonoBehaviour](https://docs.unity3d.com/ScriptReference/MonoBehaviour.html) class.    
+- The [`Update` method](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Update.html) allows us to run code almost continuously during runtime.
+- We can use [`FixedUpdate`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html) when applying physics interactions.
+- The [`GetKey` method](https://docs.unity3d.com/ScriptReference/Input.GetKey.html) returns true each frame the specified input button is down.
+- We can directly modify a `GameObject’s` transform values using the [`Translate` method](https://docs.unity3d.com/ScriptReference/Transform.Translate.html).
 - What the `GameObject` script is attached to is represented by the variable “gameObject”.
 
 ### Programming a Jump Button
 
-With the horizontal movement taken care of, we now need to move on to vertical movement. Let's program a jump button! Unlike with walking, if you hold down the jump button the player shouldn’t rise indefinitely. Therefore, we’ll use the [`GetKeyDown` method](https://docs.unity3d.com/ScriptReference/Input.GetKeyDown.html) so that it will only execute on the frame that the button is pressed.
+With the horizontal movement taken care of, we now need to move on to vertical movement. Let's program a jump button! Unlike with walking, if you hold down the jump button the player shouldn’t rise indefinitely. Therefore, we’ll use the `GetKeyDown` method so that it will only execute on the frame that the button is pressed.
 
-Editing the position directly would also be challenging with a jump feature, so instead we can take advantage of the RigidBody and use the physics method of [`AddForce`.](https://docs.unity3d.com/ScriptReference/Rigidbody.AddForce.html) 
+Editing the position directly would also be challenging with a jump feature, so instead we can take advantage of the RigidBody and use the physics method `AddForce`. 
 > We'll set the [`velocity`](https://docs.unity3d.com/ScriptReference/Rigidbody-velocity.html) to zero before initiating the force to prevent outside interactions from affecting the jump height.    
 > Horizontal movement does not qualify as RigidBody velocity, so we can still control the character mid-jump.
 
@@ -168,15 +170,15 @@ We need to use a method associated with the RigidBody component. We can access s
 
 ```C#
 private void Start()
-    {
-        rigidBody = gameObject.GetComponent<Rigidbody>();
-    }
+{
+    rigidBody = gameObject.GetComponent<Rigidbody>();
+}
 ```
 
 above `private void FixedUpdate()`.
+> Here we are storing the RigidBody in a variable, which we can access via the variable name "rigidBody".
 
-[`Start()`](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Start.html) is a common MonoBehavior function which executes just once at the start of a scene (I'll explain this later on). We use `Start()` due to the computational resources required by the [`GetComponent` method](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html).    
-> By doing the above, we are storing the RigidBody in a variable, which we can access via the variable name "rigidBody".    
+`Start()` is a common MonoBehavior function which executes just once at the start of a scene (I'll explain this later on). We use `Start()` due to the computational resources required by the `GetComponent` method.        
 
 Under our `speed` variable declaration, create a new variable called `jumpHeight`. Your code for this should look like:    
 `int jumpHeight = x;`    
@@ -188,7 +190,7 @@ We are mostly there, but there remains one problem: the player can simply tap th
 
 One way of checking to see if we are currently in the air is by reading the RigidBody’s velocity in the y direction. Normal movement across the plane will actually affect the vertical velocity very slightly, so we’ll check to see if it’s in some reasonable rounding error. 
 
-We'll add the following variables to the class in order accomplish this task, as well as see if we are actually falling:
+We'll add the following variables to the class in order to accomplish this task, as well as to see if we are actually falling:
 
 ```C#
 bool isFalling = false;
@@ -217,13 +219,14 @@ else
 ```
  
 #### What We've Learned
-- The `GetKeyDown` method returns true only on the first frame a key is pressed
+- The [`GetKeyDown` method](https://docs.unity3d.com/ScriptReference/Input.GetKeyDown.html) returns true only on the first frame a key is pressed
+- [`AddForce`](https://docs.unity3d.com/ScriptReference/Rigidbody.AddForce.html) applies a force to the Rigidbody object.
+- [`GetComponent`](https://docs.unity3d.com/ScriptReference/GameObject.GetComponent.html) is the primary way of accessing other components associated with an object.
 - To use physics interactions, we need to interact with a `GameObject’s` RigidBody component
-- Code that should only be executed once at the start should be put within the `Start` method body
+- Code that should only be executed once at the start should be put within the [`Start` method](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Start.html) body
 
 ### Having the camera follow the player.
-
-Congratulations, you’ve now built a functional third-person controller for your game! Let’s try making one more modification: having the cameral follow the player.    
+ Let’s try making one more modification: having the camera follow the player.    
 
 Go back to the Unity editor, and select  "Main Camera" in the hierarchy. Click and drag the camera onto the player object in the hierarchy. The camera should show up below the player in the hierarchy and shifted over to the right.     
 We have made the camera a child of the player (which is now the parent). The child object will inherit any changes to the basic `GameObject` properties (position, activity, etc.), so now the camera will move the same amount as the player. 
@@ -247,9 +250,12 @@ After a moment, you should be able to play a version of your third-person game.
 ## Difficulties
 
 If you encounter any errors, they should show up near the bottom of the screen or in the 'Console' tab (next to the 'Projects' tab).    
-If code is behaving in a way you don’t expect, printing a message to the console to see when a certain line is run or what value a variable has at any given point can be very helpful. > Print a message with the [`Debug.Log()` method.](https://docs.unity3d.com/ScriptReference/Debug.Log.html)
+If code is behaving in a way you don’t expect, printing a message to the console to see when a certain line is run or what value a variable has at any given point can be very helpful. 
+> Print a message with the [`Debug.Log()` method.](https://docs.unity3d.com/ScriptReference/Debug.Log.html)
 
 ## Next Steps
+Congratulations, you’ve now built a functional third-person controller for your game!
+
 From here, you’ll need to think of how you’d like your game to take shape.    
 Here are some things to consider:
 - How would you program in projectile avoidance? (Hint: look into `collision` detection and the `SetActive` method.)
