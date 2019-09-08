@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bankaccounts;
+package pokedexentries;
 
 /**
  *
  * @author Allison
  */
-public class BankAccounts {
+public class PokedexEntries {
 
     /**
      * @param args the command line arguments
