@@ -80,6 +80,7 @@ Now that we know our attributes, let's think of some methods we could use to cha
 - What if we discover a new evolution for a Pokemon? I'll create a method called `addEvolution()`. 
 
 Finally, we need a class that will act as the blueprint for each Pokemon entry that we create.  Each Pokemon entry represents a unique Pokemon. So let's decide to call our class `Pokemon`.
+> Each time we use this class, we are creating a `Pokemon` object.
 
 
 #### What We've Learned
@@ -138,7 +139,7 @@ What we've done is create instance data, or instance variables. These variables 
 - [Parameters](https://www.quora.com/In-Java-what-are-parameters) are the list of variables in a method decleration. 
 > A method decleration is where we write out the name of our method with parenthesis next to it. E.g. `public Pokemon()`.
 - [Arguements](https://www.geeksforgeeks.org/argument-vs-parameter-in-java/) are the values passed into a method.
-- [Instance data](https://www.programmerinterview.com/c-cplusplus/whats-the-difference-betwe    en-a-class-variable-and-an-instance-variable/) are any variables/attributes which are written at the class-level, i.e. underneath the class heading (`public class`). These variables can be accessed in any class method.
+- [Instance data](https://www.programmerinterview.com/c-cplusplus/whats-the-difference-between-a-class-variable-and-an-instance-variable/) are any variables/attributes which are written at the class-level, i.e. underneath the class heading (`public class`). These variables can be accessed in any class method.
 > These attributes are also unique for each object that is created from the class. This ensures that each object can have its own state.
 - [`private`](https://www.geeksforgeeks.org/access-modifiers-java/) is a visibility modifier, and is important to the concept of [encapsulation](https://www.tutorialspoint.com/java/java_encapsulation.htm). We won't cover encapsulation here, but just know that `private` ensures an attribute cannot be referenced from outside an object.
 - `String`, `int`, and `double` all represent different Java [data types](https://www.w3schools.com/java/java_data_types.asp).
@@ -146,4 +147,190 @@ What we've done is create instance data, or instance variables. These variables 
 > An `int` is any number that does not use a decimal point.    
 > A `double` is any number that can have a fractional component.
 
-### 
+### Let's go ahead and define the methods we want to use in our class
+
+Remember earlier when we were discussing methods to alter our attributes? Now that we have our attributes, let's define our methods.
+
+Let's take a look at the first method we discussed: `getNationalNumber()`. Outside of the curly braces that wrap the statements in our constructor, but within the curly braces that wrap our class, write the following:
+
+```Java
+public int getNationalNumber()
+{
+    return nationalNumber;
+}
+```
+
+Method are constructed in a certain way. First, we write the method decleration. The method decleration is made of four parts:
+- Optional modifiers (in this case the visibility modifier `public`),
+- The return value (in this case `int`),
+- The method name (`getNationalNumber`), and
+- The parameter list (left blank here).
+
+The purpose of our method is to *return* the number associated with our Pokemon. 
+
+We should reason that the method `getPokemonName` will behave in the same way as `getNationalNumber`, so try to write it by yourself, underneath `getNationalNumber`. 
+> Hint: The return type will be different. Look at how we defined `name` for a hint.
+------
+
+Figure it out? My code for the method looks like this:
+
+```Java
+public String getPokemonName()
+{
+    return pokemonName;
+}
+```
+
+#### What We've Learned
+- [Methods](https://www.w3schools.com/java/java_methods.asp) are defined by optional modifiers, a return type, a method name, and a list of parameters. 
+- What the method actually does is contained within the method body. The method body is contained within curly braces (`{}`).
+- [`public`](https://www.w3schools.com/java/java_modifiers.asp) is a visibility modifier which allows us to use a method by referencing a `Pokemon` object. 
+- `int` and `String` are examples of the [return type](https://www.decodejava.com/java-method-return-types.htm), i.e. what type of variable is given back to the user.
+- If we have a return type, we MUST use the `return` keyword. This makes sure that the result of our method's process is given back to the larger program.
+- Have you noticed how each of our methods start with the word "get"? Programmers will often refer to these types of methods as ["getters"](https://www.codejava.net/coding/java-getter-and-setter-tutorial-from-basics-to-best-practices), since they retrieve - or get - the value of an attribute from our object. You'll also see reference to "setter" methods. 
+
+### You know what's great? We have everything we need to get our code to run! Let's try this.
+
+Going back to `PokedexEntries.java`, under where we have written `System.out.println("Hello World!");`, let's create an actual `Pokemon` object. 
+
+In order to do that, we first have to declare the type of object we are creating. Think of this as deciding the data type for a standard variable. Because we want to create a `Pokemon` object, our type of object is `Pokemon`. 
+
+Now we need a name for our `Pokemon` type. This will be our variable name. I'm going to call my `Pokemon` object `Pikachu`. Write `Pokemon Pikachu` underneath the `System.out` statement.
+> This is the exact same procedure as writing `int nationalNumber`, just without the visibility modifier.
+
+In order to give our `Pikachu` variable value, we need to create a new `Pokemon` object. To do this, write the following line of code:    
+```Java
+Pikachu = new Pokemon("Pikachu", 25, "Mouse Pokemon", 0.4, "Pichu, Raichu");
+```
+The `new` keyword instantiates a `Pokemon` object. We need to include the various strings and numbers in our parameter list because that is what is required by the constructor method in `Pokemon.java`.
+> Take a look back at `Pokemon.java` if you are confused.
+
+Underneath this, we'll test the methods that we wrote. In order to do this, write out:
+```Java
+System.out.println(Pikachu.getNationalNumber());
+System.out.println(Pikachu.getPokemonName());
+```
+Hit the green "Play" button and see what happens! You should see 
+`Hello World!`    
+`25`    
+`Pikachu`    
+in the output terminal.
+> If not, use the error given to try and fix your code. You can reference my code through the Beginners Portal by clicking "Beginners-Portal -> Pokedex -> PokedexEntries -> src/pokedexentries" and then clicking on either file.
+
+#### What We've Learned
+- We are able to create objects based on classes that we have created by declaring a variable as the name of our class. 
+- Using the [`new` keyword](https://www.geeksforgeeks.org/new-operator-java/) allows us to instantiate a new object from a class.
+- Variables written in the parameter list of our constructor method must be filled in by values when we create a new object.
+- [`System.out.println()`](https://javapapers.com/core-java/system-out-println/) allows us to write information to the output terminal/console.
+- We can call public methods from a class by typing the object's name, a period, and then the name of the method.
+> Be sure to include the parenthesis at the end!
+
+### Let's clean up our PokedexEntries.java page, then go back to writing more methods for our Pokemon class.
+
+Feel free to get rid of all the grey text that exists, as well as the `"Hello World!"` execution statement. 
+
+I'm also going to rewrite the section of code which creates our `Pikachu object`. Instead of declaring the `Pikachu` variable, then creating a new object, I can do it all in one line of code:
+
+```Java
+Pokemon Pikachu = new Pokemon("Pikachu", 25, "Mouse Pokemon", 0.4, "Pichu, Raichu");
+```
+This makes the code cleaner and shorter. It isn't necessary, and you can certainly leave it as how we originally wrote it.
+
+----
+
+Perfect! Now, let's go back to `Pokemon.java` and continue to write more methods.
+
+Let's add in our `changeDescription()` method. We know it should be called through the object's name, and it has the name `changeDescription()`. But it won't return anything to the user who called the method. So our return type will be `void` Go ahead and write all of that out yourself under the `getPokemonName()` method. Be sure to include your curly braces!
+
+Now, in order to change a description, we need to get the original description and a new one. We're able to directly reference the original description via its variable name ` shortDescription`, but how can we get a new one? 
+
+It needs to be provided by the user, of course! And how can we use that new description to change the old one? We need to pass it in as an arguement! That means we need to add a parameter to our `changeDescription()` method. Once you've done that, try to figure out how to actually change the description. 
+
+-----
+ 
+Figure it out? If not, that's okay! We're all still learning. Here's what my method looks like:
+
+```Java
+public void changeDescription(String shortDescription)
+{
+    this.shortDescription = shortDescription;
+}
+```
+
+#### What We've Learned
+- We are able to declare and instantiate objects in the same line of code. 
+- [`void`](https://www.w3schools.com/java/ref_keyword_void.asp) is used when a method does not return anything. 
+- Remember when I talked about getters and setters? `changeDescription()` would be considered a setter method, since we are changing - or setting - the description for our Pokemon to something else. We could very easily have called this method `setDescription()` to follow standard conventions.
+
+### Let's add in our final two methods
+
+Using what you know, go ahead and try to add in `alterHeight()` and `addEvolution`. 
+ 
+My code for those two methods ends up looking like this:
+
+```Java
+public void alterHeight(double newHeight)
+{
+    height = newHeight;
+}
+
+public void addEvolution(String evolve)
+{
+    evolutions += ", " + evolve;
+}
+```
+
+That final method body looks weird, right? What we're performing is string concatination. If we had just done `this.evolutions = evolutions`, we would have gotten rid of the evolutions already in place. By using the `+=` symbol, we tell the computer to add on the value(s) passed in through `evolve` to the value(s) that already exists in `evolutions`. 
+`", " + evolve` is another form of string concatination, in that we are adding a comma and a space to the front of the value of `evolve`. 
+
+> Example: Say `evolutions` = "Pichu" only. I realize that I forgot to add Raichu. I will call the `addEvolution` method by writing `Pikachu.addEvolution("Raichu");` "Raichu" will be the value of the variable `evolve`. In the body of `addEvolutions()`, we append `, ` to the front of "Raichu" (so it now looks like ", Raichu"), then add that to the value of `evolutions`. `evolutions` is now equal to "Pichu, Raichu". 
+
+#### What We've Learned
+- [String concatination](https://www.techiedelight.com/concatenate-two-strings-java/) is the process of combining two Strings together using the `+` symbol.
+- [+=](https://www.geeksforgeeks.org/compound-assignment-operators-java/) is shorthand notation for the following type of structure: `x+=y` is equivalent to `x = x + y`. This also works for numerical values. 
+
+### With our code all set, go ahead and try out these last few methods that we have added on.
+
+As you're doing this, you may notice errors popping up if you want to display the results of `changeDescription()`, `alterHeight()`, or `addEvolution()` via `System.out.println()`. You can change how the methods work by altering the return type, but that defeats the purpose of those methods in the first place. Instead, what we can do is add a `toString()` method which will display all of the attributes of our Pokemon entry. 
+
+Go back to `Pokemon.java` and write the following code:
+
+```Java
+public String toString(){
+    String result = "Pokemon Name: " + pokemonName + "\n";
+    result += "National Number: " + nationalNumber + "\n";
+    result += "Description: " + shortDescription + "\n";
+    result += "Height (in meters): " + height + "\n";
+    result += "Evolutions: " + evolutions;
+
+    return result;
+}
+```
+Now, go to `PokedexEntries.java` and called the methods like so:    
+`Pikachu.*methodname*(*parameters if required*);`    
+Finally, to see everything in action, do `System.out.println(Pikachu);`
+
+This will give us all the details of our `Pokemon` object, with all the changes made to it via our methods. If you want to see how `Pikachu` looked before all of the changes, just put `System.out.println(Pikachu);` below where we created our `Pikachu` object.
+
+#### What We've Learned
+- [`"\n"`](https://docs.oracle.com/javase/tutorial/java/data/characters.html) stands for "newline", and adds a newline character to the end of a sentence so the next sentence starts on a new line.
+> Look at "Escape Sequences" in the link.
+- A [`toString()` method](https://www.javatpoint.com/understanding-toString()-method) makes sure that we are properly able to view attributes without having to redo entire sections of code
+> In other examples, you'll see that it provides meaningful information where we normally get a confusing line of code. 
+
+## Running the Code
+
+In order to appreciate the fruits of your labor, all you need to do is hit the big green "Run Project" arrow.
+
+### Difficulties 
+If your code does not work for some reason, make sure:
+- your method bodies are surrounded by their own set of curly braces
+- your methods are within the class curly braces
+- each line of code that isn't a method decleration ends in a semicolon (;)
+
+Compare your code to mine by going to "Beginners Portal -> Pokedex -> PokedexEntries -> src/pokedexentries" and then selecting either file. 
+
+If you are still getting errors, use the internet! It is often times your best resource.
+
+## Next Steps
+

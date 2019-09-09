@@ -1,22 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package pokedexentries;
 
-/**
- *
- * @author Allison
- */
 public class PokedexEntries {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("Hello World!");
+//  TODO code application logic here
+//  Used in the first portion of the tutorial:
+//      System.out.println("Hello World!");
+//  One way of declaring a new Pokemon object:
+//      Pokemon Pikachu;
+//      Pikachu = new Pokemon("Pikachu", 25, "Mouse Pokemon", 0.4, "Pichu, Raichu");
+
+//  Creating our new Pokemon object
+        Pokemon Pikachu = new Pokemon("Pikachu", 25, "Mouse Pokemon", 0.4, "Pichu, Raichu");
+        
+//  Seeing our Pikachu object before it is altered via methods
+        System.out.println(Pikachu);
+        
+//  Testing the first two methods we created
+        System.out.println(Pikachu.getNationalNumber());
+        System.out.println(Pikachu.getPokemonName());
+        
+//  Altering the attributes of our Pokemon object
+        Pikachu.changeDescription("Electric Mouse Pokemon");
+        Pikachu.alterHeight(0.5);
+        Pikachu.addEvolution("Alolan Raichu");
+        
+//  Seeing the results of our alteration
+        System.out.println(Pikachu);
+        
+        
     }
     
 }
