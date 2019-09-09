@@ -334,3 +334,14 @@ If you are still getting errors, use the internet! It is often times your best r
 
 ## Next Steps
 
+You're now able to create different Pokemon entries for your Pokedex! This is a great stepping-off point for doing more complex programming. Here are some ideas to get you started:
+- Add more attributes and methods to the `Pokemon` class. 
+- Create a different program with different classes and methods. See if you can use [loops](https://www.geeksforgeeks.org/loops-in-java/), [if-else statements](https://www.w3schools.com/java/java_conditions.asp), and [math operations](http://tutorials.jenkov.com/java/math-operators-and-math-class.html).
+- Java has a feature called [JavaFX](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm) which allows you to create graphics and different media packages. See what you can create with it!
+- Look into making a web application using Java.
+
+# Good Luck Hackers!
+
+-----
+
+##### Pokemon is a trademark of Nintendo. No commercial gain is sought, and this code is instead intended for educational purposes.
