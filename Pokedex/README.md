@@ -5,14 +5,14 @@ We'll be creating a way to generate entries for different Pokemon in a Pokedex (
 
 ## Set-Up
 
-1. The best way (up for some debate) to develop Java applications is by using an IDE called NetBeans. [Please download NetBeans](https://netbeans.org) for this tutorial.
+1. My prefered way to develop Java applications is by using an IDE called NetBeans. [Please download NetBeans](https://netbeans.org) for this tutorial.
 > I'll be using Netbeans v8.2. There are newer versions available, and all the code should follow.    
 > You'll be fine if you download Java SE    
 > You're more than welcome to see if your chosen text editor can write Java files, but Netbeans is generally the easiest system to work with. I'll be using this program, and the tutorial will reflect that.  
 2. Upon opening NetBeans, click "File -> New Project". Leave the selections as "Java" and "Java Application". Save the project name as "PokedexEntries" and save it to a location accessable by your Github connection, DevPost, etc... Finally, click "Finish".
 3. When the file first opens, you'll see a whole bunch of confusing text. Under the gray text that reads `// TODO code application logic here`, write `System.out.println("Hello World!")`.
 > Make sure this new line is in between the curly braces (`{}`).
-4. Press the green play arrow at the top of the page, and see what happens! You should now see "Hello World!" printed in the built-in terminal. Pretty cool, right? We'll be doing some more awesome stuff later on.
+4. Press the green play arrow at the top of the page, and see what happens. You should now see "Hello World!" printed in the built-in terminal. Pretty cool, right? We'll be doing some more awesome stuff later on.
 
 If you want to see you file in context, you can click on the "Projects" tab along the left side of the screen. Feel free to explore more of the IDE before getting started.
 
@@ -24,13 +24,13 @@ Object-oriented programming (OOP) is a way of writing code that allows us to cre
 
 Consider the following example: We run a bank, and want to have a way of keeping track of all of our employees. We know that each employee has a name, age, rank within the company, salary, and vacation time. We can certainly type each label and information for every employee into a database. But what if we had 10,000 employees? Wouldn't it be great if all of those labels were already set-up, and all we had to do was insert the information? 
 
-That's were OOP comes in! Using OOP, we are able to create those labels so that our secretary can easily insert a new employee's information when they are hired in. 
+That's were OOP comes in! Using OOP, we are able to create those labels so that we can easily insert a new employee's information when they are hired in. 
 
 OOP can get a bit complex, but here are the basic concepts you should know for this tutorial:
 
-[Object](https://docs.oracle.com/javase/tutorial/java/concepts/object.html): An object is a fundemental element in a program. It is an individual employee in our banking example, of a Pokemon in this tutorial.       
-[Attribute](http://www.dmc.fmph.uniba.sk/public_html/doc/Java/ch2.htm#Attributes): An attribute is a piece of information about the object (e.g. the salary of an employee, or the name of the Pokemon.)    
-[State](https://www.quora.com/What-is-an-object-state-in-programming): An object's state is closely tied to its attributes. The state is an object is defined by its attributes.    
+[Object](https://docs.oracle.com/javase/tutorial/java/concepts/object.html): An object is a fundemental element in a program. It is an individual employee in our banking example, or a Pokemon in this tutorial.       
+[Attribute](http://www.dmc.fmph.uniba.sk/public_html/doc/Java/ch2.htm#Attributes): An attribute is a piece of information related to the object (e.g. the salary of an employee, or the name of the Pokemon.)    
+[State](https://www.quora.com/What-is-an-object-state-in-programming): An object's state is closely tied to its attributes. The state of an object is defined by its attributes.    
 [Methods/Operations](https://brilliant.org/wiki/methods-oop/): Methods are actions we can take to modify an object. For example, we can increase the salary of an employee. For a Pokemon, a potential method would be the ability to raise or lower its HP.   
 [Behavior](http://www.informit.com/articles/article.aspx?p=25856&seqNum=6): The behavior of an object is closely tied to its methods. It is defined by the methods/operations associated with an object.    
 [Class](https://docs.oracle.com/javase/tutorial/java/concepts/class.html): A class is the way in which we create objects. Think of a class as a blueprint for a building. It tells us *how* to build an object, but is not the object itself.
@@ -38,10 +38,8 @@ OOP can get a bit complex, but here are the basic concepts you should know for t
 > Some of the reference pages may be a bit confusing based on your knowledge level, but that's okay. Try to understand as much as you can, and also feel free to look some stuff up. We're performing a very basic version of OOP, and likely won't get into the meat of what it is.    
 > If you are interested in reading a basic explaination of the finer points of OOP, [freeCodeCamp has an excellent article.](https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260/)
 
-You'll also want to understand what a [variable](https://www.kidscodecs.com/variables/) is.
-
 #### What We've Learned
-- Object-Oriented Programming (OOP) is a programming technique that comes from defining classes which represent object(s). 
+- Object-Oriented Programming (OOP) is a programming technique that operates around the idea of defining classes which represent object(s). 
 - Objects are defined by their state and behavior, which themselves are defined by their attributes and methods, respectively. 
 - Variables are names used to represent values or objects in code.    
 > [Here is an explaination of variables in Java](https://www.geeksforgeeks.org/variables-in-java/). I'll also go over specific ones later on in the code. 
@@ -61,7 +59,7 @@ If you've every played a Pokemon game, you know that an entry in the National Po
 - Its Habitat
 - Its Evolutions
 
-This data gives us the different attributes we want to include in our class! In fact, it can also help us come up with variable names for that information! 
+This data gives us the different attributes we want to include in our class. In fact, it can also help us come up with variable names for the information! 
 
 Choose 5 of the items given above to use as attributes within our class, and try to come up with a variable name to represent the data it will hold. I'll be using:
 
@@ -71,12 +69,12 @@ Choose 5 of the items given above to use as attributes within our class, and try
 - Attribute: Height; Variable Name: `height`
 - Attribute: Evolutions; Variable Name: `evolutions`
 
-Now that we know our attributes, let's think of some methods we could use to change our attributes. 
+Now that we know our attributes, let's think of some methods we could use to change those attributes. 
 
 - The National Number will always stay the same, but maybe I'll want to know what its number is specifically. I'll need a method called `getNationalNumber()`.
 - The Pokemon's name will never change, but maybe I'll want to call its name specifically. I'll need a method called `getPokemonName()`.
 - The description of the Pokemon can change depending on how much we know about the Pokemon. I'll create a method to change its informaton called `changeDescription()`.
-- The height of a Pokemon could change, depending on how many we've caught. I'll create a method called `alterHeight()`.
+- The average height of a Pokemon could change, depending on how many we've caught. I'll create a method called `alterHeight()`.
 - What if we discover a new evolution for a Pokemon? I'll create a method called `addEvolution()`. 
 
 Finally, we need a class that will act as the blueprint for each Pokemon entry that we create.  Each Pokemon entry represents a unique Pokemon. So let's decide to call our class `Pokemon`.
@@ -91,7 +89,7 @@ Finally, we need a class that will act as the blueprint for each Pokemon entry t
 
 The page we are currently on (with `public class PokedexEntries`) will help us with creating new entries in our Pokedex, but it is not ultimately what *makes* the entries themselves. 
 
-Go over to your "Projects" tab, and right click on "pokedexentries". Select "New -> Java Class" and set the class name as "Pokemon". Hit "Finish"
+Go over to your "Projects" tab, and right click on "pokedexentries". Select "New -> Java Class" and set the class name as "Pokemon". Hit "Finish".
 
 You should now see a page with a lot of grey text, `package pokedexentries`, more grey text, and `public class Pokemon` on it. Feel free to delete the grey text.
 
@@ -116,7 +114,7 @@ public Pokemon(String name, int num, String description, double height, String e
 ```
 If you've done it correctly, you should be seeing an error message of "cannot find symbol" in Netbeans. We'll fix that in one second.    
 
-What we've done here is create a constructor. When we create a new Pokemon entry, we'll be supplying the name of the Pokemon, its national number, a description, its height, and its evolutions. That information is passed in as parameters, those values in between the parenthesis. The information in the parameters are now called arguements, and are then assigned to the data within the class (shown via `pokemonName = name`). `pokemonName` is data that exists within the class - called instance data - while `name` is an arguement. 
+What we've done here is create a constructor. When we create a new Pokemon entry, we'll be supplying the name of the Pokemon, its national number, a description, its height, and its evolutions. That information is passed through parameters - those variables in between the parenthesis. The information in the parameters are now called arguements, and are then assigned to the data within the class (shown via `pokemonName = name`). `pokemonName` is data that exists within the class - called instance data - while `name` is an arguement. 
 
 > As an example, say we want to create an entry for Pikachu. When we create our object, we'll be passing it in like this:    
 > `Pokemon("Pikachu", 25, "Mouse Pokemon", 0.4, "Pichu, Raichu")`.    
@@ -151,7 +149,7 @@ What we've done is create instance data, or instance variables. These variables 
 
 Remember earlier when we were discussing methods to alter our attributes? Now that we have our attributes, let's define our methods.
 
-Let's take a look at the first method we discussed: `getNationalNumber()`. Outside of the curly braces that wrap the statements in our constructor, but within the curly braces that wrap our class, write the following:
+Take a look at the first method we discussed: `getNationalNumber()`. Outside of the curly braces that wrap the statements in our constructor, but within the curly braces that wrap our class, write the following:
 
 ```Java
 public int getNationalNumber()
@@ -160,13 +158,13 @@ public int getNationalNumber()
 }
 ```
 
-Method are constructed in a certain way. First, we write the method decleration. The method decleration is made of four parts:
+Methods are constructed in a certain way. First, we write the method decleration. The method decleration is made of four parts:
 - Optional modifiers (in this case the visibility modifier `public`),
 - The return value (in this case `int`),
 - The method name (`getNationalNumber`), and
 - The parameter list (left blank here).
 
-The purpose of our method is to *return* the number associated with our Pokemon. 
+The purpose of this method is to *return* the number associated with our Pokemon. 
 
 We should reason that the method `getPokemonName` will behave in the same way as `getNationalNumber`, so try to write it by yourself, underneath `getNationalNumber`. 
 > Hint: The return type will be different. Look at how we defined `name` for a hint.
@@ -183,7 +181,7 @@ public String getPokemonName()
 
 #### What We've Learned
 - [Methods](https://www.w3schools.com/java/java_methods.asp) are defined by optional modifiers, a return type, a method name, and a list of parameters. 
-- What the method actually does is contained within the method body. The method body is contained within curly braces (`{}`).
+- What the method actually does is contained within the method body. The method body is wrapped within curly braces (`{}`).
 - [`public`](https://www.w3schools.com/java/java_modifiers.asp) is a visibility modifier which allows us to use a method by referencing a `Pokemon` object. 
 - `int` and `String` are examples of the [return type](https://www.decodejava.com/java-method-return-types.htm), i.e. what type of variable is given back to the user.
 - If we have a return type, we MUST use the `return` keyword. This makes sure that the result of our method's process is given back to the larger program.
@@ -196,9 +194,9 @@ Going back to `PokedexEntries.java`, under where we have written `System.out.pri
 In order to do that, we first have to declare the type of object we are creating. Think of this as deciding the data type for a standard variable. Because we want to create a `Pokemon` object, our type of object is `Pokemon`. 
 
 Now we need a name for our `Pokemon` type. This will be our variable name. I'm going to call my `Pokemon` object `Pikachu`. Write `Pokemon Pikachu` underneath the `System.out` statement.
-> This is the exact same procedure as writing `int nationalNumber`, just without the visibility modifier.
+> This is the exact same procedure as writing `private int nationalNumber`, just without the visibility modifier.
 
-In order to give our `Pikachu` variable value, we need to create a new `Pokemon` object. To do this, write the following line of code:    
+In order to give our `Pikachu` variable a value, we need to create a new `Pokemon` object. To do this, write the following line of code:    
 ```Java
 Pikachu = new Pokemon("Pikachu", 25, "Mouse Pokemon", 0.4, "Pichu, Raichu");
 ```
@@ -210,7 +208,7 @@ Underneath this, we'll test the methods that we wrote. In order to do this, writ
 System.out.println(Pikachu.getNationalNumber());
 System.out.println(Pikachu.getPokemonName());
 ```
-Hit the green "Play" button and see what happens! You should see 
+Hit the green "Play" button and see what happens! You should see    
 `Hello World!`    
 `25`    
 `Pikachu`    
@@ -238,13 +236,13 @@ This makes the code cleaner and shorter. It isn't necessary, and you can certain
 
 ----
 
-Perfect! Now, let's go back to `Pokemon.java` and continue to write more methods.
+Now, let's go back to `Pokemon.java` and continue to write more methods.
 
 Let's add in our `changeDescription()` method. We know it should be called through the object's name, and it has the name `changeDescription()`. But it won't return anything to the user who called the method. So our return type will be `void` Go ahead and write all of that out yourself under the `getPokemonName()` method. Be sure to include your curly braces!
 
 Now, in order to change a description, we need to get the original description and a new one. We're able to directly reference the original description via its variable name ` shortDescription`, but how can we get a new one? 
 
-It needs to be provided by the user, of course! And how can we use that new description to change the old one? We need to pass it in as an arguement! That means we need to add a parameter to our `changeDescription()` method. Once you've done that, try to figure out how to actually change the description. 
+It needs to be provided by the user, of course! And how can we use that new description to change the old one? We need to pass it in as an arguement. That means we need to add a parameter to our `changeDescription()` method. Once you've done that, try to figure out how to actually change the description. 
 
 -----
  
@@ -283,7 +281,7 @@ public void addEvolution(String evolve)
 That final method body looks weird, right? What we're performing is string concatination. If we had just done `this.evolutions = evolutions`, we would have gotten rid of the evolutions already in place. By using the `+=` symbol, we tell the computer to add on the value(s) passed in through `evolve` to the value(s) that already exists in `evolutions`. 
 `", " + evolve` is another form of string concatination, in that we are adding a comma and a space to the front of the value of `evolve`. 
 
-> Example: Say `evolutions` = "Pichu" only. I realize that I forgot to add Raichu. I will call the `addEvolution` method by writing `Pikachu.addEvolution("Raichu");` "Raichu" will be the value of the variable `evolve`. In the body of `addEvolutions()`, we append `, ` to the front of "Raichu" (so it now looks like ", Raichu"), then add that to the value of `evolutions`. `evolutions` is now equal to "Pichu, Raichu". 
+> Example: Say `evolutions` = "Pichu" only. I realize that I forgot to add Raichu. I will call the `addEvolution` method by writing `Pikachu.addEvolution("Raichu");` "Raichu" will be the value of the variable `evolve`. In the body of `addEvolutions()`, we append ", " to the front of "Raichu" (so it now looks like ", Raichu"), then add that to the value of `evolutions`. `evolutions` is now equal to "Pichu, Raichu". 
 
 #### What We've Learned
 - [String concatination](https://www.techiedelight.com/concatenate-two-strings-java/) is the process of combining two Strings together using the `+` symbol.
@@ -308,7 +306,7 @@ public String toString(){
 ```
 Now, go to `PokedexEntries.java` and called the methods like so:    
 `Pikachu.*methodname*(*parameters if required*);`    
-Finally, to see everything in action, do `System.out.println(Pikachu);`
+Finally, to see everything in action, write `System.out.println(Pikachu);`
 
 This will give us all the details of our `Pokemon` object, with all the changes made to it via our methods. If you want to see how `Pikachu` looked before all of the changes, just put `System.out.println(Pikachu);` below where we created our `Pikachu` object.
 
@@ -324,9 +322,9 @@ In order to appreciate the fruits of your labor, all you need to do is hit the b
 
 ### Difficulties 
 If your code does not work for some reason, make sure:
-- your method bodies are surrounded by their own set of curly braces
-- your methods are within the class curly braces
-- each line of code that isn't a method decleration ends in a semicolon (;)
+- your method bodies are surrounded by their own set of curly braces.
+- your methods are within the class curly braces.
+- each line of code that isn't a method decleration ends in a semicolon (;).
 
 Compare your code to mine by going to "Beginners Portal -> Pokedex -> PokedexEntries -> src/pokedexentries" and then selecting either file. 
 
@@ -337,7 +335,7 @@ If you are still getting errors, use the internet! It is often times your best r
 You're now able to create different Pokemon entries for your Pokedex! This is a great stepping-off point for doing more complex programming. Here are some ideas to get you started:
 - Add more attributes and methods to the `Pokemon` class. 
 - Create a different program with different classes and methods. See if you can use [loops](https://www.geeksforgeeks.org/loops-in-java/), [if-else statements](https://www.w3schools.com/java/java_conditions.asp), and [math operations](http://tutorials.jenkov.com/java/math-operators-and-math-class.html).
-- Java has a feature called [JavaFX](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm) which allows you to create graphics and different media packages. See what you can create with it!
+- Java has a feature called [JavaFX](https://docs.oracle.com/javase/8/javafx/get-started-tutorial/jfx-overview.htm) which allows you to create graphics and different media packages. See what you can create!
 - Look into making a web application using Java.
 
 # Good Luck Hackers!
