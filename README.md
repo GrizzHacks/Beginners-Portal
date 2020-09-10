@@ -14,10 +14,8 @@ We'd recommend starting with these guides before trying any of the tutorials
 ⭐[Create a Static Website Using HTML and CSS](https://github.com/GrizzHacks/Beginners-Portal/tree/master/InfoPage)     
 ⭐[Use Unity and C# to Create a Third-Person Controller](https://github.com/GrizzHacks/Beginners-Portal/tree/master/UnityPlayerControl)    
 ⭐[Learn about Java by building a Pokedex using Object-Oriented Programming](https://github.com/GrizzHacks/Beginners-Portal/tree/master/Pokedex)
-⭐[Video Tutorials for various languages/frameworks from freeCodeCamp]
-(https://www.youtube.com/c/Freecodecamp/playlists)
-⭐[Over 100 tutorial posts on getting started with coding]
-(https://www.freecodecamp.org/news/tag/tutorial/)
+⭐[Video Tutorials for various languages/frameworks from freeCodeCamp](https://www.youtube.com/c/Freecodecamp/playlists)
+⭐[Over 100 tutorial posts on getting started with coding](https://www.freecodecamp.org/news/tag/tutorial/)
 
 ## Idea Generator
 Need a spark of inspiration, or just some more practice? Look here!    
